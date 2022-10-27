@@ -1,0 +1,57 @@
+name: "Publish new release"
+
+on:
+  pull_request:
+    branches:
+      - PROD
+    types:
+      - closed
+
+jobs:
+  release:
+    name: Publish new release
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true # only merged pull requests must trigger this job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Extract version from branch name (for release branches)
+        if: startsWith(github.event.pull_request.head.ref, 'release/')
+        run: |
+          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          VERSION=${BRANCH_NAME#release/}
+          echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
+      - name: Extract version from branch name (for hotfix branches)
+        if: startsWith(github.event.pull_request.head.ref, 'hotfix/')
+        run: |
+          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          VERSION=${BRANCH_NAME#hotfix/}
+          echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Build Changelog
+        id: build_changelog
+        uses: mikepenz/release-changelog-builder-action@v3
+        with:
+          toTag: "HEAD"        
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Create Release
+        uses: thomaseizinger/create-release@1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          target_commitish: ${{ github.event.pull_request.merge_commit_sha }}
+          tag_name: ${{ env.RELEASE_VERSION }}
+          name: ${{ env.RELEASE_VERSION }}
+          draft: false
+          prerelease: false
+          body: ${{steps.build_changelog.outputs.changelog}}
+          
+      # Push new Changelog & Version to QA branch
+      - name: Push changes to QA
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: QA
+          force: true
