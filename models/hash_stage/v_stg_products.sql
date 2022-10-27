@@ -1,25 +1,19 @@
-{{ 
-    config(materialized='view') 
-}}
+{{ config(materialized='view') }}
 
 {%- set yaml_metadata -%}
-source_model: "company_with_high_watermark"
+source_model: "stg_products"
 derived_columns:
-  RECORD_SOURCE: "!Hubspot"
+  RECORD_SOURCE: "!DUMMY"
   LOAD_DATETIME: CURRENT_TIMESTAMP
-  EFFECTIVE_FROM: "_FIVETRAN_SYNCED"
-  COMPANY_NAME: "PROPERTY_NAME"
+  EFFECTIVE_FROM: "FIVETRAN_SYNCED"
 hashed_columns:
-  HUB_COMPANY_HKEY: "PROPERTY_NAME"
-  SAT_COMPANY_DETAILS_HASHDIFF:
+  HUB_PRODUCT_HKEY: "PRODUCT_NAME"
+  PRODUCT_HASHDIFF:
     is_hashdiff: true
-    exclude_columns: true
     columns:
-      - "PROPERTY_NAME"
-      - "dbt_scd_id"
-      - "dbt_updated_at"
-      - "dbt_valid_from" 
-      - "dbt_valid_to"   
+      - "ID"
+      - "UNIT_PRICE"
+      - "UNITS"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

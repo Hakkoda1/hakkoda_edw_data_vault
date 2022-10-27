@@ -3,23 +3,22 @@
 }}
 
 {%- set yaml_metadata -%}
-source_model: "company_with_high_watermark"
+source_model: "kp_fhir_practitioner"
 derived_columns:
-  RECORD_SOURCE: "!Hubspot"
-  LOAD_DATETIME: CURRENT_TIMESTAMP
-  EFFECTIVE_FROM: "_FIVETRAN_SYNCED"
-  COMPANY_NAME: "PROPERTY_NAME"
+  RECORD_SOURCE: "!KP FHIR Practitioner"
+  LOAD_DATETIME: 'TO_TIMESTAMP_NTZ(CURRENT_TIMESTAMP)'
+  EFFECTIVE_FROM: "LAST_UPDATED"
+  PROVIDER_ID: "ID"
+  COLLISION_KEY: "!KP"
 hashed_columns:
-  HUB_COMPANY_HKEY: "PROPERTY_NAME"
-  SAT_COMPANY_DETAILS_HASHDIFF:
+  HUB_PROVIDER_HKEY: 
+    - "PROVIDER_ID"
+    - "COLLISION_KEY"
+  HASH_DIFF:
     is_hashdiff: true
     exclude_columns: true
     columns:
-      - "PROPERTY_NAME"
-      - "dbt_scd_id"
-      - "dbt_updated_at"
-      - "dbt_valid_from" 
-      - "dbt_valid_to"   
+      - "ID"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

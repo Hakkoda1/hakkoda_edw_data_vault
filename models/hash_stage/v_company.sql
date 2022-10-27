@@ -3,7 +3,7 @@
 }}
 
 {%- set yaml_metadata -%}
-source_model: "company_with_high_watermark"
+source_model: "company"
 derived_columns:
   RECORD_SOURCE: "!Hubspot"
   LOAD_DATETIME: CURRENT_TIMESTAMP
@@ -19,7 +19,12 @@ hashed_columns:
       - "dbt_scd_id"
       - "dbt_updated_at"
       - "dbt_valid_from" 
-      - "dbt_valid_to"   
+      - "dbt_valid_to"
+      - "DBTVAULT_RANK"
+ranked_columns:
+  DBTVAULT_RANK:
+    partition_by: "PROPERTY_NAME"
+    order_by: "_FIVETRAN_SYNCED"      
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
@@ -29,4 +34,4 @@ hashed_columns:
                   derived_columns=metadata_dict['derived_columns'],
                   null_columns=none,
                   hashed_columns=metadata_dict['hashed_columns'],
-                  ranked_columns=none) }}
+                  ranked_columns=metadata_dict['ranked_columns']) }}
