@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'dbtvault'
+name: 'jaffle_shop'
 version: '1.3.0'
 config-version: 2
 
@@ -38,7 +38,7 @@ tests:
 models:
   pre-hook: "{{ logging.log_model_start_event() }}"
   post-hook: "{{ logging.log_model_end_event() }}"
-  dbtvault:
+  jaffle_shop:
     marts:
       core:
         +materialized: table       
