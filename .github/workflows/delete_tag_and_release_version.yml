@@ -1,0 +1,23 @@
+name: "Delete a tag and release version"
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The tag and release version you want to delete.'
+        required: true
+
+jobs:
+  delete-tag-version:
+    name: "Delete a tag and release version"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Delete Tag and Release Version
+        uses: dev-drprasad/delete-tag-and-release@v0.2.0
+        with:
+          delete_release: true # default: false
+          tag_name: "${{ github.event.inputs.version }}" # tag name to delete
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
