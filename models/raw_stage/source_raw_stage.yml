@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: hubspot
+    description: Hubspot database synced from Fivetran.
+    database: fivetran
+    schema: hubspot
+    tables:
+      - name: company
+      - name: contact
+      - name: deal
+  - name: etl_admin
+    description: My sandbox database etl_admin schema for dbt and dbtvault.
+    database: cp_sandbox
+    schema: etl_admin
+    tables:
+      - name: dbt_audit_log     
+  - name: healthcare_raw_stg
+    description: Healthcare RAW_STG sandbox datasets.
+    database: healthcare
+    schema: raw_stg
+    tables:
+      - name: phm_providers  
+      - name: phm_providers_with_key 
+  - name: healthcare_stg
+    description: Healthcare STG sandbox datasets.
+    database: healthcare
+    schema: stg
+    tables:
+      - name: kp_fhir_practitioner  
+  - name: ionis_sbx
+    description: Ionis sandbox datasets.
+    database: ionis_sbx
+    schema: ionis_dev_sbx
+    tables:
+      - name: raw_address
+      - name: raw_hco      
+      - name: raw_hcp    
+      - name: raw_parent_hco                
