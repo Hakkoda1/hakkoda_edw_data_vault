@@ -1,0 +1,101 @@
+STRINGMAPID,VALUE,ATTRIBUTENAME,OBJECTTYPECODE,ORGANIZATIONID,VERSIONNUMBER,LANGID,ATTRIBUTEVALUE,DISPLAYORDER,_FIVETRAN_DELETED,_FIVETRAN_SYNCED
+d3da25fa-7c39-ed11-9db0-00224809bf1b,Installing,statuscode,msdynmkt_cmsaddon,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892954552,1033,534120003,4,FALSE,2022-09-21T11:01:26.058Z
+cfda25fa-7c39-ed11-9db0-00224809bf1b,Inactive,statecode,msdynmkt_cmsaddon,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892954548,1033,1,2,FALSE,2022-09-21T11:01:26.058Z
+d0da25fa-7c39-ed11-9db0-00224809bf1b,None,statuscode,msdynmkt_cmsaddon,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892954549,1033,534120000,1,FALSE,2022-09-21T11:01:26.058Z
+13cacb9e-5b39-ed11-9db0-00224809bc8a,Installing,msdyncrm_librarystatus,msdyncrm_digitalassetsconfiguration,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892655031,1033,270100002,3,FALSE,2022-09-21T11:01:26.058Z
+0fcacb9e-5b39-ed11-9db0-00224809bc8a,DigitalAssets,msdyncrm_usedlibrary,msdyncrm_digitalassetsconfiguration,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892655027,1033,270100001,2,FALSE,2022-09-21T11:01:26.058Z
+10cacb9e-5b39-ed11-9db0-00224809bc8a,CMS,msdyncrm_usedlibrary,msdyncrm_digitalassetsconfiguration,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892655028,1033,270100002,3,FALSE,2022-09-21T11:01:26.058Z
+d5da25fa-7c39-ed11-9db0-00224809bf1b,Disabled,statuscode,msdynmkt_cmsaddon,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892954554,1033,534120005,6,FALSE,2022-09-21T11:01:26.058Z
+08b454bc-7d39-ed11-9db0-00224809bf1b,On,msdynmkt_tracking,msdynmkt_imagestyle,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892960451,1033,1,1,FALSE,2022-09-21T11:01:26.058Z
+d2da25fa-7c39-ed11-9db0-00224809bf1b,Failed,statuscode,msdynmkt_cmsaddon,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892954551,1033,534120002,3,FALSE,2022-09-21T11:01:26.058Z
+ceda25fa-7c39-ed11-9db0-00224809bf1b,Active,statecode,msdynmkt_cmsaddon,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892954547,1033,0,1,FALSE,2022-09-21T11:01:26.058Z
+15cacb9e-5b39-ed11-9db0-00224809bc8a,Failed,msdyncrm_librarystatus,msdyncrm_digitalassetsconfiguration,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892655033,1033,270100004,5,FALSE,2022-09-21T11:01:26.058Z
+12cacb9e-5b39-ed11-9db0-00224809bc8a,Ready,msdyncrm_librarystatus,msdyncrm_digitalassetsconfiguration,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892655030,1033,270100001,2,FALSE,2022-09-21T11:01:26.058Z
+0ecacb9e-5b39-ed11-9db0-00224809bc8a,Unknown,msdyncrm_usedlibrary,msdyncrm_digitalassetsconfiguration,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892655026,1033,270100000,1,FALSE,2022-09-21T11:01:26.058Z
+d4da25fa-7c39-ed11-9db0-00224809bf1b,Uninstalling,statuscode,msdynmkt_cmsaddon,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892954553,1033,534120004,5,FALSE,2022-09-21T11:01:26.058Z
+d1da25fa-7c39-ed11-9db0-00224809bf1b,Installed,statuscode,msdynmkt_cmsaddon,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892954550,1033,534120001,2,FALSE,2022-09-21T11:01:26.058Z
+14cacb9e-5b39-ed11-9db0-00224809bc8a,Uninstalling,msdyncrm_librarystatus,msdyncrm_digitalassetsconfiguration,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892655032,1033,270100003,4,FALSE,2022-09-21T11:01:26.058Z
+11cacb9e-5b39-ed11-9db0-00224809bc8a,Unknown,msdyncrm_librarystatus,msdyncrm_digitalassetsconfiguration,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892655029,1033,270100000,1,FALSE,2022-09-21T11:01:26.058Z
+d6da25fa-7c39-ed11-9db0-00224809bf1b,Inactive,statuscode,msdynmkt_cmsaddon,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892954555,1033,2,7,FALSE,2022-09-21T11:01:26.058Z
+09b454bc-7d39-ed11-9db0-00224809bf1b,Off,msdynmkt_tracking,msdynmkt_imagestyle,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892960452,1033,0,2,FALSE,2022-09-21T11:01:26.058Z
+759d6cfe-0436-ed11-9db1-000d3a5a6570,No,vms_allowothermetrics,msdyn_workorder,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1889194200,1033,0,1,FALSE,2022-09-21T11:01:23.472Z
+769d6cfe-0436-ed11-9db1-000d3a5a6570,Yes,vms_allowothermetrics,msdyn_workorder,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1889194201,1033,1,2,FALSE,2022-09-21T11:01:23.472Z
+816dd613-4e34-ed11-9db1-000d3a5a6937,Requirement Change,targetentity,importmap,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886057399,1033,11553,1001,FALSE,2022-09-21T11:01:23.472Z
+f02ada0c-4e34-ed11-9db1-000d3a5a6937,Requirement Change,msdyn_activityType,msdyn_playbookactivity,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886056709,1033,11553,1001,FALSE,2022-09-21T11:01:23.472Z
+00b0d21a-4e34-ed11-9db1-000d3a5a6937,Requirement Change,matchingentitytypecode,similarityrule,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886060541,1033,11553,1001,FALSE,2022-09-21T11:01:23.472Z
+4ed20d21-4e34-ed11-9db1-000d3a5a6937,Requirement Change,matchingentitytypecode,duplicaterule,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886061636,1033,11553,1001,FALSE,2022-09-21T11:01:23.472Z
+87300627-4e34-ed11-9db1-000d3a5a6937,Requirement Change,baseentitytypecode,duplicaterule,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886062259,1033,11553,1001,FALSE,2022-09-21T11:01:23.472Z
+fbafd21a-4e34-ed11-9db1-000d3a5a6937,Requirement Change,baseentitytypecode,similarityrule,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886059875,1033,11553,1001,FALSE,2022-09-21T11:01:23.472Z
+89300627-4e34-ed11-9db1-000d3a5a6937,Requirement Change,msdyn_EntityOTC,msdyn_callablecontext,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886062932,1033,11553,1001,FALSE,2022-09-21T11:01:23.472Z
+f7afd21a-4e34-ed11-9db1-000d3a5a6937,Requirement Change,objecttypecode,sla,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886059144,1033,11553,1001,FALSE,2022-09-21T11:01:23.472Z
+e1b96026-4b32-ed11-9db0-00224809bc8a,Inactive,statecode,DeletedEntity for objectTypeCode=11567,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1883554346,1033,1,2,FALSE,2022-09-21T11:01:26.058Z
+dfb96026-4b32-ed11-9db0-00224809bc8a,Inactive,statuscode,DeletedEntity for objectTypeCode=11567,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1883554344,1033,2,2,FALSE,2022-09-21T11:01:26.058Z
+6a806986-4432-ed11-9db0-00224809bc8a,Sync Synapse Tables Schema,operationtype,asyncoperation,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1883517015,1033,307,96,FALSE,2022-09-21T11:01:26.058Z
+e0b96026-4b32-ed11-9db0-00224809bc8a,Active,statecode,DeletedEntity for objectTypeCode=11567,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1883554345,1033,0,1,FALSE,2022-09-21T11:01:26.058Z
+deb96026-4b32-ed11-9db0-00224809bc8a,Active,statuscode,DeletedEntity for objectTypeCode=11567,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1883554343,1033,1,1,FALSE,2022-09-21T11:01:26.058Z
+b5b79f46-b030-ed11-9db0-00224809bf1b,Sales Accelerator Mail Notification to Admin,msdyn_featurename,msdyn_recurringsalesaction,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1881964641,1033,5,6,FALSE,2022-09-21T11:01:26.058Z
+b7b79f46-b030-ed11-9db0-00224809bf1b,Scheduled DataHygiene Validation,msdyn_featurename,msdyn_recurringsalesaction,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1881964643,1033,7,8,FALSE,2022-09-21T11:01:26.058Z
+4fdc8cfb-b530-ed11-9db0-00224809bf1b,Advanced To Other Sequence,msdyn_deactivatereason,msdyn_sequencetarget,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1881995221,1033,5,6,FALSE,2022-09-21T11:01:26.058Z
+b6b79f46-b030-ed11-9db0-00224809bf1b,Scheduled DataHygiene Validation Trigger,msdyn_featurename,msdyn_recurringsalesaction,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1881964642,1033,6,7,FALSE,2022-09-21T11:01:26.058Z
+4edc8cfb-b530-ed11-9db0-00224809bf1b,Sequence Completed,msdyn_deactivatereason,msdyn_sequencetarget,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1881995220,1033,4,5,FALSE,2022-09-21T11:01:26.058Z
+582253f2-1ff9-ea11-a815-000d3a19b60d,Inactive,statuscode,msdyn_purchaseordersubstatus,e37e225e-06b3-4bbd-a655-5746a6ec18a0,581970213,1033,2,2,FALSE,2022-09-21T11:01:19.925Z
+1e643f8e-e6df-ec11-bb3d-0022480c5711,Active,statuscode,DeletedEntity for objectTypeCode=11164,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1734293150,1033,1,1,FALSE,2022-09-21T11:01:26.067Z
+3652e6ea-90bb-e811-a962-000d3a199c1e,Completed,msevtmgt_schedulesessions,msevtmgt_event,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1048473,1033,100000003,3,FALSE,2022-09-21T11:01:18.946Z
+fef81ebe-3938-ec11-b6e6-0022480b22dc,Keywords Description Suggestion Setting,matchingentitytypecode,similarityrule,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1850056969,1033,11266,219,FALSE,2022-09-21T11:01:26.061Z
+7fbc3f87-5ec6-e811-a95a-000d3a1d7430,Strike Team Leader,vms_typeoftraining,vms_eventinstructor,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1395996,1033,178320000,2,FALSE,2022-09-21T11:01:21.363Z
+e72f95d3-3fcc-ea11-a812-000d3a1914a7,Royal Canadian Navy,vms_branchofservice,contact,e37e225e-06b3-4bbd-a655-5746a6ec18a0,487791785,1033,178320019,6,FALSE,2022-09-21T11:01:17.96Z
+77b00233-32b3-e811-a977-000d3a180d94,Check-in,type,post,e37e225e-06b3-4bbd-a655-5746a6ec18a0,608650,1033,1,1,FALSE,2022-09-21T11:01:16.995Z
+80a5084e-b609-ec11-b6e6-0022480a2f56,Session Participant Data (Deprecated),msdyn_EntityOTC,msdyn_callablecontext,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1850061746,1033,11194,754,FALSE,2022-09-21T11:01:26.059Z
+058aa24d-6d38-ea11-a813-000d3a1914a7,No,vms_fortified,bookableresource,e37e225e-06b3-4bbd-a655-5746a6ec18a0,119438389,1033,0,1,FALSE,2022-09-21T11:01:17.96Z
+588bfb4c-81de-eb11-bacb-000d3a32f3e1,Internal error,msdyncrm_domainalignmentvalidationstatus,msdyncrm_setupdomain,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1129670240,1033,32,8,FALSE,2022-09-21T11:01:23.454Z
+3a049116-90bb-e811-a962-000d3a199c1e,Yes,msdyncrm_isinstallcomplete,msdyncrm_digitalassetsconfiguration,e37e225e-06b3-4bbd-a655-5746a6ec18a0,993306,1033,1,2,FALSE,2022-09-21T11:01:18.943Z
+457e262a-3db3-e811-a977-000d3a180d94,No,leftvoicemail,incidentresolution,e37e225e-06b3-4bbd-a655-5746a6ec18a0,614889,1033,0,1,FALSE,2022-09-21T11:01:17.933Z
+e378a470-2cf5-eb11-94ef-000d3a339783,Inactive,statuscode,msnfp_specification,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1191163444,1033,2,2,FALSE,2022-09-21T11:01:23.459Z
+1afc96f1-de6e-e911-a980-000d3a1a9bf6,Security,msdyn_category,msdyn_analysisresult,e37e225e-06b3-4bbd-a655-5746a6ec18a0,90891702,1033,192350003,6,FALSE,2022-09-21T11:01:21.347Z
+62bc3f87-5ec6-e811-a95a-000d3a1d7430,MM,wipfli_datetimeformat,wipfli_autonumberconfiguration,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1395971,1033,7,8,FALSE,2022-09-21T11:01:21.363Z
+23f20d8f-c09b-ec11-b400-000d3a3252ab,GroupMe,community,msfp_surveyresponse,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1604688287,1033,10,6,FALSE,2022-09-21T11:01:22.365Z
+3e406921-3b9b-ec11-b400-000d3a3084bf,Microsoft Teams,community,socialprofile,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1604688244,1033,7,3,FALSE,2022-09-21T11:01:22.356Z
+a4ca424c-32b3-e811-a977-000d3a180d94,Goal Metric,targetentity,importmap,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886056930,1033,9603,1159,FALSE,2022-09-21T11:01:17.06Z
+ee613f8e-e6df-ec11-bb3d-0022480c5711,Mail,msnfp_ga_deliverycode,DeletedEntity for objectTypeCode=11148,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1734292590,1033,844060002,3,FALSE,2022-09-21T11:01:26.064Z
+4002cb25-a5ce-eb11-bacc-00224809a8ac,Yes,vms_covid19vaxcomplete,contact,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1104442193,1033,1,2,FALSE,2022-09-21T11:01:26.058Z
+74a0c5f2-30f9-ea11-a815-000d3a1bda55,RTV,targetentity,importmap,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1779667064,1033,10772,73,FALSE,2022-09-21T11:01:21.356Z
+75dca258-44b3-e811-a977-000d3a180d94,Entitlement Template Channel,matchingentitytypecode,similarityrule,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1779671721,1033,9703,96,FALSE,2022-09-21T11:01:17.947Z
+87737969-2ddf-e811-a964-000d3a199c61,Appointment activity marketing template,msdyn_activityType,msdyn_playbookactivity,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886056351,1033,10299,1262,FALSE,2022-09-21T11:01:18.961Z
+0e4334ba-93bb-e811-a95f-000d3a199c61,(4) Marketing,msgdpr_requiredconsent,msdyncrm_customerjourney,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1143146,1033,587030004,4,FALSE,2022-09-21T11:01:18.958Z
+d9f6940f-c308-eb11-a813-000d3a1917ff,ConversationTranscript,targetentity,importmap,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1850051970,1033,10803,269,FALSE,2022-09-21T11:01:17.964Z
+9189706f-2ddf-e811-a964-000d3a199c61,State,msdyn_EntityOTC,msdyn_callablecontext,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1872730810,1033,10385,919,FALSE,2022-09-21T11:01:18.97Z
+d1613f8e-e6df-ec11-bb3d-0022480c5711,No,msnfp_donotsendmm,DeletedEntity for objectTypeCode=11148,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1734292561,1033,1,1,FALSE,2022-09-21T11:01:26.064Z
+c46de881-3019-ed11-b83c-0022480816fa,Danish,msdynmkt_language,msdynmkt_emailtemplate,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1829893512,1033,1030,6,FALSE,2022-09-21T11:01:26.036Z
+54f23a52-32b3-e811-a977-000d3a180d94,Inactive,statecode,userquery,e37e225e-06b3-4bbd-a655-5746a6ec18a0,613828,1033,1,2,FALSE,2022-09-21T11:01:17.922Z
+b4349608-23f9-ea11-a815-000d3a19b38e,Agreement Booking Service Task,record1objecttypecode,connection,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892691299,1033,10715,134,FALSE,2022-09-21T11:01:19.917Z
+26d801d1-2398-e911-a96f-000d3a1d777d,Yes,msnfp_isrevocable,msnfp_plannedgiving,e37e225e-06b3-4bbd-a655-5746a6ec18a0,38678296,1033,1,1,FALSE,2022-09-21T11:01:22.336Z
+fca3f69e-92bb-e811-a962-000d3a199c1e,06,msdyncrm_starttimehour,msdyncrm_phonecallactivitymarketingtemplate,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1111234,1033,6,7,FALSE,2022-09-21T11:01:18.951Z
+f0da239d-98de-eb11-bacb-002248087f53,Web application,matchingentitytypecode,duplicaterule,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1850058345,1033,10419,251,FALSE,2022-09-21T11:01:26.038Z
+a18cb3bc-d07c-ec11-8d21-0022480952ce,Inactive,statecode,DeletedEntity for objectTypeCode=11303,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1548095305,1033,1,2,FALSE,2022-09-21T11:01:26.056Z
+c81d8e51-44b3-e811-a977-000d3a180d94,Product,objecttypecode,sla,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886057498,1033,1024,701,FALSE,2022-09-21T11:01:17.944Z
+b367f6ee-96bb-e811-a964-000d3a1a9a3a,Journal Line,targetentity,importmap,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1872724223,1033,10064,853,FALSE,2022-09-21T11:01:19.937Z
+a18f85e4-547c-eb11-a812-000d3a3b16cc,Inactive,vms_generalonboardingsession1,contact,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1104442128,1033,178320002,4,FALSE,2022-09-21T11:01:23.465Z
+5db9f1c3-9db9-e811-a965-000d3a1995db,None,msdyn_relateditemtype,msdyn_timeentry,e37e225e-06b3-4bbd-a655-5746a6ec18a0,814381,1033,192350000,1,FALSE,2022-09-21T11:01:18.93Z
+8d9daf62-3fdf-eb11-bacb-002248087f53,Mauritania ,vms_country,contact,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1131112980,1033,178320132,133,FALSE,2022-09-21T11:01:26.039Z
+2d89706f-2ddf-e811-a964-000d3a199c61,Service Endpoint,msdyn_EntityOTC,msdyn_callablecontext,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1850060738,1033,4618,300,FALSE,2022-09-21T11:01:18.969Z
+5c755240-32b3-e811-a977-000d3a180d94,Custom Control Default Config,componenttype,dependencynode,e37e225e-06b3-4bbd-a655-5746a6ec18a0,610791,1033,68,68,FALSE,2022-09-21T11:01:17.032Z
+d5a9e1ec-92bb-e811-a962-000d3a199c1e,Yes,msdyncrm_salesready,lead,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1119069,1033,1,1,FALSE,2022-09-21T11:01:18.955Z
+40b9f1c3-9db9-e811-a965-000d3a1995db,Fee,msdyn_transactionclassification,msdyn_invoicelinetransaction,e37e225e-06b3-4bbd-a655-5746a6ec18a0,582271401,1033,192350004,8,FALSE,2022-09-21T11:01:18.93Z
+6d5a7315-1d35-e911-a979-000d3a1995db,Recall Requested,msdyn_targetentrystatus,msdyn_timeentry,e37e225e-06b3-4bbd-a655-5746a6ec18a0,352854670,1033,192350004,6,FALSE,2022-09-21T11:01:18.942Z
+709daf62-3fdf-eb11-bacb-002248087f53,Japan ,vms_country,contact,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1131112950,1033,178320103,104,FALSE,2022-09-21T11:01:26.039Z
+06737969-2ddf-e811-a964-000d3a199c61,Integration Job Detail,msdyn_activityType,msdyn_playbookactivity,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886056263,1033,10059,1179,FALSE,2022-09-21T11:01:18.961Z
+b9a3f69e-92bb-e811-a962-000d3a199c1e,Active,statecode,msdyncrm_uicconfig,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1111167,1033,0,1,FALSE,2022-09-21T11:01:18.95Z
+bf6ccd72-8abb-e811-a95e-000d3a1d72b6,Inactive,statecode,msdyn_feedbacksubsurvey,e37e225e-06b3-4bbd-a655-5746a6ec18a0,973652,1033,1,2,FALSE,2022-09-21T11:01:21.362Z
+99bc7bd3-aca4-eb11-b1ac-0022480424b1,file,msdyn_type,msdyn_bookableresourcebookingquicknote,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1020867790,1033,100000005,6,FALSE,2022-09-21T11:01:26.032Z
+9b42e084-a408-ec11-b6e5-0022480a291e,Conversation Data (Deprecated),objecttypecode,sla,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886058907,1033,11190,462,FALSE,2022-09-21T11:01:26.059Z
+9a094c28-d0fc-eb11-94ee-000d3a339a43,Inactive,statuscode,msdyn_dealmanageraccess,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1201489671,1033,2,2,FALSE,2022-09-21T11:01:23.459Z
+a26ccd72-8abb-e811-a95e-000d3a1d72b6,Active,statuscode,msdyn_responseaction,e37e225e-06b3-4bbd-a655-5746a6ec18a0,973624,1033,1,1,FALSE,2022-09-21T11:01:21.362Z
+da1488f4-a61d-ea11-a813-000d3a19b38e,Inactive,statecode,msdyncrm_marketingdataimport,e37e225e-06b3-4bbd-a655-5746a6ec18a0,109026203,1033,1,2,FALSE,2022-09-21T11:01:19.916Z
+19755240-32b3-e811-a977-000d3a180d94,Entity,componenttype,dependencynode,e37e225e-06b3-4bbd-a655-5746a6ec18a0,610724,1033,1,1,FALSE,2022-09-21T11:01:17.032Z
+0c9daf62-3fdf-eb11-bacb-002248087f53,American Samoa ,vms_country,contact,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1131112850,1033,178320003,4,FALSE,2022-09-21T11:01:26.038Z
+3423638b-9bb9-e811-a965-000d3a1995db,Completed,msdyn_status,msdyn_requirementstatus,e37e225e-06b3-4bbd-a655-5746a6ec18a0,694326,1033,690970001,2,FALSE,2022-09-21T11:01:17.966Z
+7e524a46-32b3-e811-a977-000d3a180d94,Goal,record2objecttypecode,connection,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1892691363,1033,9600,7,FALSE,2022-09-21T11:01:17.046Z
+bedcfe21-1635-e911-a973-000d3a1a9bf6,Account,msdyn_pooltype,msdyn_resourcerequirement,e37e225e-06b3-4bbd-a655-5746a6ec18a0,21193607,1033,192350000,1,FALSE,2022-09-21T11:01:21.347Z
+8bc5fa7d-bdeb-eb11-bacb-000d3a5b5536,File,msdyn_activityType,msdyn_playbookactivity,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886056601,1033,11086,1570,FALSE,2022-09-21T11:01:23.475Z
+3f66f6ee-96bb-e811-a964-000d3a1a9a3a,Registration Response,matchingentitytypecode,duplicaterule,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1779673617,1033,10274,128,FALSE,2022-09-21T11:01:19.935Z
+2b055450-35e2-ea11-a813-000d3a1bda55,Smart Links Content Viewed,objecttypecode,sla,e37e225e-06b3-4bbd-a655-5746a6ec18a0,1886058297,1033,10501,1107,FALSE,2022-09-21T11:01:21.353Z
