@@ -10,7 +10,7 @@ derived_columns:
   RECORD_SOURCE: "!Hubspot"
   LOAD_DATETIME: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
   EFFECTIVE_FROM: "_FIVETRAN_SYNCED"
-  DEAL_NAME: "PROPERTY_NAME"
+  DEAL_NAME: "PROPERTY_DEALNAME"
   DEAL_STAGE_NAME: "PIPELINE_STAGE_LABEL"
   EMPLOYEE_EMAIL_ADDRESS: "DEAL_OWNER_EMAIL"
 hashed_columns:
@@ -25,6 +25,7 @@ hashed_columns:
     is_hashdiff: true
     exclude_columns: true
     columns:
+      - "PROPERTY_DEALNAME"
       - "PIPELINE_STAGE_LABEL"
       - "DEAL_OWNER_EMAIL"
       - "_FIVETRAN_SYNCED" 
