@@ -9,6 +9,7 @@ sources:
       - name: company
       - name: contact
       - name: deal
+      - name: deal_company
       - name: deal_stage
       - name: deal_pipeline_stage
       - name: owner
