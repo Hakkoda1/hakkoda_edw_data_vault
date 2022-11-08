@@ -5,7 +5,7 @@
 }}
 
 {%- set source_model = ["primed_hubspot_deal"]  -%}
-{%- set src_pk = "HUB_PIPELINE_STAGE_HKEY"      -%}
+{%- set src_pk = "HUB_SALES_PIPELINE_STAGE_HKEY"      -%}
 {%- set src_nk = "PIPELINE_STAGE_NAME"          -%}
 {%- set src_ldts = "LOAD_DATETIME"       -%}
 {%- set src_source = "RECORD_SOURCE"     -%}
