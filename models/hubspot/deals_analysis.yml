@@ -1,0 +1,11 @@
+version: 2
+
+models:
+
+  - name: deals_analysis
+    description: Each record represents a deal in Hubspot.
+    columns:
+      - name: industry
+        description: The industry of the company
+        tests:
+          - not_null
