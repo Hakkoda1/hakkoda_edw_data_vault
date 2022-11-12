@@ -1,0 +1,23 @@
+jaffle_shop:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ht48847.canada-central.azure
+
+      # User/password auth
+      user: CHRIS_PUURI_SBX
+      password: Freedom1717$
+
+      role: SYSADMIN
+      database: CP_SANDBOX
+      warehouse: COMPUTE_WH
+      schema: dbt_cpuuri
+      threads: 8
+      client_session_keep_alive: False
+
+      # optional
+      connect_retries: 0 # default 0
+      connect_timeout: 10 # default: 10
+      retry_on_database_errors: False # default: false 
+      retry_all: False  # default: false
