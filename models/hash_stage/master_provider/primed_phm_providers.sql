@@ -1,15 +1,16 @@
 {{ 
-    config(materialized='view') 
+    config(
+        tags=["master_provider"]
+        ) 
 }}
 
 {%- set yaml_metadata -%}
-source_model: "kp_fhir_practitioner"
+source_model: "stage_phm_providers"
 derived_columns:
-  RECORD_SOURCE: "!KP FHIR Practitioner"
-  LOAD_DATETIME: 'TO_TIMESTAMP_NTZ(CURRENT_TIMESTAMP)'
-  EFFECTIVE_FROM: "LAST_UPDATED"
-  PROVIDER_ID: "ID"
-  COLLISION_KEY: "!KP"
+  RECORD_SOURCE: "!PHM Provider Database Sample"
+  LOAD_DATETIME: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
+  EFFECTIVE_FROM: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
+  COLLISION_KEY: "!PHM"
 hashed_columns:
   HUB_PROVIDER_HKEY: 
     - "PROVIDER_ID"
@@ -18,7 +19,7 @@ hashed_columns:
     is_hashdiff: true
     exclude_columns: true
     columns:
-      - "ID"
+      - "PROVIDER_ID"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
