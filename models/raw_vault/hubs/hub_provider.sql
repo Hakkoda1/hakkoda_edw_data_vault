@@ -1,6 +1,10 @@
-{{ config(materialized='incremental')    }}
+{{ config(
+    materialized='incremental'
+    ,tags=["master_provider"]
+    )    
+}}
 
-{%- set source_model = ["v_phm_providers", "v_kp_fhir_practitioner"]  -%}
+{%- set source_model = ["primed_phm_providers", "primed_kp_fhir_practitioner"]  -%}
 {%- set src_pk = "HUB_PROVIDER_HKEY"      -%}
 {%- set src_nk = ["PROVIDER_ID", "COLLISION_KEY"]  -%}
 {%- set src_ldts = "LOAD_DATETIME"       -%}

@@ -1,7 +1,11 @@
-{{ config(materialized='incremental') }}
+{{ config(
+    materialized='incremental'
+    ,tags=["master_provider"]
+    )    
+}}
 
 {%- set yaml_metadata -%}
-source_model: "v_phm_providers"
+source_model: "primed_phm_providers"
 src_pk: "HUB_PROVIDER_HKEY"
 src_hashdiff: "HASH_DIFF"
 src_payload:
