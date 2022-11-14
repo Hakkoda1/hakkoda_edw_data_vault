@@ -3,6 +3,7 @@
 select
     deal_name,
     deal_owner,
+    pipeline_stage,
     project_start_date
 from {{ ref('deals_analysis') }}
 where pipeline_stage in ('Contract Sent', 'Negotiation', 'Closed Won')

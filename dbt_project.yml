@@ -50,7 +50,16 @@ models:
       +schema: 'raw_vault' 
     hubspot:
       +materialized: view
-      +schema: 'hubspot'                     
+      +schema: 'hubspot' 
+    info_mart:
+      +materialized: view
+      +schema: 'info_mart'    
+    source_mart:
+      +materialized: view
+      +schema: 'source_mart'  
+    unit_test:
+      +materialized: view
+      +schema: 'unit_test'                                       
 
 vars:
   'dbt_date:time_zone': 'America/Los_Angeles'

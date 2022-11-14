@@ -1,0 +1,7 @@
+version: 2
+
+models:
+
+  - name: veeva_etmf_study
+    description: A view that recreates the Veeva ETMF Study raw_stage object from the raw vault.
+    tags: ['ionis','veeva_etmf']
