@@ -1,5 +1,7 @@
 {{ 
-    config(materialized='view') 
+    config(
+        tags=["master_provider"]
+        ) 
 }}
 
 select s.* 

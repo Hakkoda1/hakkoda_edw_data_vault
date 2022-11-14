@@ -1,4 +1,8 @@
-{{ config(materialized='incremental') }}
+{{ config(
+    materialized='incremental'
+    ,tags=["master_provider"]
+    )    
+}}
 
 {%- set yaml_metadata -%}
 source_model: "primed_phm_providers"

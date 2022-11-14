@@ -1,13 +1,15 @@
 {{ 
-    config(materialized='view') 
+    config(
+        tags=["master_provider"]
+        ) 
 }}
 
 {%- set yaml_metadata -%}
-source_model: "phm_providers"
+source_model: "stage_phm_providers"
 derived_columns:
   RECORD_SOURCE: "!PHM Provider Database Sample"
   LOAD_DATETIME: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
-  EFFECTIVE_FROM: "_FIVETRAN_SYNCED"
+  EFFECTIVE_FROM: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
   COLLISION_KEY: "!PHM"
 hashed_columns:
   HUB_PROVIDER_HKEY: 
@@ -18,7 +20,6 @@ hashed_columns:
     exclude_columns: true
     columns:
       - "PROVIDER_ID"
-      - "_FIVETRAN_SYNCED"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

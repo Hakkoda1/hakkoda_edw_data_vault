@@ -1,9 +1,11 @@
 {{ 
-    config(materialized='view') 
+    config(
+        tags=["master_provider"]
+        ) 
 }}
 
 {%- set yaml_metadata -%}
-source_model: "kp_fhir_practitioner"
+source_model: "stage_kp_fhir_practitioner"
 derived_columns:
   RECORD_SOURCE: "!KP FHIR Practitioner"
   LOAD_DATETIME: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
