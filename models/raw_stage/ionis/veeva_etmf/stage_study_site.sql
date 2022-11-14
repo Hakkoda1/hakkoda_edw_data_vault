@@ -202,6 +202,8 @@ SELECT TO_VARIANT(
 )
 SELECT t1.VALUE:ClinicalStudyName::STRING as STUDY_ID
 ,t1.VALUE:SiteNumber::STRING as SITE_NUMBER
+,t1.VALUE:StudyCountry.Country::STRING as COUNTRY_NAME
+,t1.VALUE:PrincipalInvestigator.VeevaNetworkID::STRING AS PRINCIPAL_INVESTIGATOR_ID
 ,t0.SRC_JSON
 FROM VEEVA_ETMF_STUDY_SITE t0
 , lateral flatten( input => SRC_JSON ) t1
