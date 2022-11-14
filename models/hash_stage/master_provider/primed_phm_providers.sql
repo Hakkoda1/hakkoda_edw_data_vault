@@ -3,23 +3,22 @@
 }}
 
 {%- set yaml_metadata -%}
-source_model: "company_with_high_watermark"
+source_model: "phm_providers"
 derived_columns:
-  RECORD_SOURCE: "!Hubspot"
-  LOAD_DATETIME: CURRENT_TIMESTAMP
+  RECORD_SOURCE: "!PHM Provider Database Sample"
+  LOAD_DATETIME: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
   EFFECTIVE_FROM: "_FIVETRAN_SYNCED"
-  COMPANY_NAME: "PROPERTY_NAME"
+  COLLISION_KEY: "!PHM"
 hashed_columns:
-  HUB_COMPANY_HKEY: "PROPERTY_NAME"
-  SAT_COMPANY_DETAILS_HASHDIFF:
+  HUB_PROVIDER_HKEY: 
+    - "PROVIDER_ID"
+    - "COLLISION_KEY"
+  HASH_DIFF:
     is_hashdiff: true
     exclude_columns: true
     columns:
-      - "PROPERTY_NAME"
-      - "dbt_scd_id"
-      - "dbt_updated_at"
-      - "dbt_valid_from" 
-      - "dbt_valid_to"   
+      - "PROVIDER_ID"
+      - "_FIVETRAN_SYNCED"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

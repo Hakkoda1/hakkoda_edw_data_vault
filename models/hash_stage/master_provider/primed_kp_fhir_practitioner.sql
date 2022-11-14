@@ -6,7 +6,7 @@
 source_model: "kp_fhir_practitioner"
 derived_columns:
   RECORD_SOURCE: "!KP FHIR Practitioner"
-  LOAD_DATETIME: 'TO_TIMESTAMP_NTZ(CURRENT_TIMESTAMP)'
+  LOAD_DATETIME: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
   EFFECTIVE_FROM: "LAST_UPDATED"
   PROVIDER_ID: "ID"
   COLLISION_KEY: "!KP"

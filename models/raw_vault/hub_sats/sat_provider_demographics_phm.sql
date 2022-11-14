@@ -1,22 +1,18 @@
-{{ config(materialized='vault_insert_by_rank', rank_column='DBTVAULT_RANK', rank_source_models='v_company') }}
+{{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: "v_company"
-src_pk: "HUB_COMPANY_HKEY"
-src_hashdiff: 
-  source_column: "SAT_COMPANY_DETAILS_HASHDIFF"
-  alias: "HASH_DIFF"
+source_model: "primed_phm_providers"
+src_pk: "HUB_PROVIDER_HKEY"
+src_hashdiff: "HASH_DIFF"
 src_payload:
     exclude_columns: true
     columns:
-        - "COMPANY_NAME"
-        - "PROPERTY_NAME"
+        - "PROVIDER_ID"
+        - "COLLISION_KEY"
         - "dbt_scd_id"
         - "dbt_updated_at"
         - "dbt_valid_from" 
         - "dbt_valid_to"
-        - "SAT_COMPANY_DETAILS_HASHDIFF"
-        - "DBTVAULT_RANK"
 src_eff: "EFFECTIVE_FROM"
 src_ldts: "LOAD_DATETIME"
 src_source: "RECORD_SOURCE"

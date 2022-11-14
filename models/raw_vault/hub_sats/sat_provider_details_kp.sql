@@ -1,18 +1,15 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-source_model: "v_phm_providers"
+source_model: "primed_kp_fhir_practitioner"
 src_pk: "HUB_PROVIDER_HKEY"
 src_hashdiff: "HASH_DIFF"
 src_payload:
     exclude_columns: true
     columns:
         - "PROVIDER_ID"
+        - "ID"
         - "COLLISION_KEY"
-        - "dbt_scd_id"
-        - "dbt_updated_at"
-        - "dbt_valid_from" 
-        - "dbt_valid_to"
 src_eff: "EFFECTIVE_FROM"
 src_ldts: "LOAD_DATETIME"
 src_source: "RECORD_SOURCE"
