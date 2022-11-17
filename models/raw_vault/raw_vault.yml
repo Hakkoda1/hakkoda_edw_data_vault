@@ -44,6 +44,42 @@ models:
           column_names:
             - hub_jaffle_customer_hkey
             - load_datetime
+  - name: lnk_order_customer
+    description: A distinct list of the relationship between Orders and Customers from Jaffle Shop.
+    tags: ['order','jaffle_shop']
+    columns:
+      - name: hub_order_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_order')
+              pk_column_name: hub_order_hkey
+      - name: hub_jaffle_customer_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_jaffle_customer')
+              pk_column_name: hub_jaffle_customer_hkey                            
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - lnk_order_customer_hkey   
+  - name: lnk_payment_order
+    description: A distinct list of the relationship between Payments and Orders.
+    tags: ['payment','stripe']
+    columns:
+      - name: hub_payment_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_payment')
+              pk_column_name: hub_payment_hkey
+      - name: hub_order_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_order')
+              pk_column_name: hub_order_hkey              
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - lnk_payment_order_hkey               
   - name: lsat_order_details_jaffle_shop
     description: Descriptive information for Orders from Jaffle Shop.
     tags: ['order','jaffle_shop']
