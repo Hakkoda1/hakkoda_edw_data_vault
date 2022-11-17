@@ -7,7 +7,9 @@
 {%- set yaml_metadata -%}
 source_model: "primed_veeva_etmf_study"
 src_pk: "HUB_STUDY_HKEY"
-src_hashdiff: "SAT_STUDY_DETAILS_HASHDIFF"
+src_hashdiff: 
+  source_column: "SAT_STUDY_DETAILS_HASHDIFF"
+  alias: "HASH_DIFF"
 src_payload:
   - PAYLOAD
 src_eff: "EFFECTIVE_FROM"
