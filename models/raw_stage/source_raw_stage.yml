@@ -40,4 +40,40 @@ sources:
       - name: raw_address
       - name: raw_hco      
       - name: raw_hcp    
-      - name: raw_parent_hco                
+      - name: raw_parent_hco   
+  - name: jaffle_shop
+    description: A clone of a Postgres application database.
+    database: cp_sandbox
+    schema: jaffle_shop
+    tables:
+      - name: customers
+        description: Raw customers data.
+        columns:
+          - name: id
+            description: Primary key for customers.
+            tests:
+              - dbt_expectations.expect_column_values_to_be_unique:
+                  config:
+                    severity: error
+              - not_null
+      - name: orders
+        description: Raw orders data.
+        columns:
+          - name: id
+            description: Primary key for orders.
+            tests:
+              - unique
+              - not_null
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: hour} 
+  - name: stripe
+    database: cp_sandbox
+    schema: stripe
+    tables:
+      - name: payment
+        loaded_at_field: _batched_at
+        freshness:
+            warn_after: {count: 12, period: hour}
+            error_after: {count: 24, period: hour}                            

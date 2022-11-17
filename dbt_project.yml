@@ -51,6 +51,9 @@ models:
     hubspot:
       +materialized: view
       +schema: 'hubspot' 
+    biz_vault:
+      +materialized: view
+      +schema: 'biz_vault' 
     info_mart:
       +materialized: view
       +schema: 'info_mart'    
