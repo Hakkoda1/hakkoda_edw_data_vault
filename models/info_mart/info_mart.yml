@@ -15,7 +15,11 @@ models:
         description: Natural key
         tests:
           - unique 
-          - not_null   
+          - not_null 
+      - name: first_order
+        description: NULL when a customer has not yet placed an order.  
+      - name: most_recent_order
+        description: NULL when a customer has not yet placed an order.                    
   - name: fact_order
     description: One record per Order ID. 
     columns:
@@ -43,8 +47,11 @@ models:
           - relationships:
               to: ref('dim_jaffle_customer')
               field: jaffle_customer_key             
-#      - name: order_date
-#        tests:
-#          - dbt_expectations.expect_row_values_to_have_recent_data:
-#              datepart: hour
-#              interval: 2                                
+      - name: order_date
+        description: Invoice Date
+        tests:
+          - not_null
+      - name: amount
+        description: Dollar amount of the order
+        tests:
+          - not_null                              
