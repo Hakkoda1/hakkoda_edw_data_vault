@@ -1,15 +1,15 @@
 {{ config(
-    tags=["payment","jaffle_shop"]
+    tags=["payment","stripe"]
 ) }}
 
 select
-    id as payment_id,
-    orderid as order_id,
-    paymentmethod as payment_method,
+    id,
+    orderid,
+    paymentmethod,
     status,
 
     -- amount is stored in cents, convert it to dollars
     {{ cents_to_dollars('amount') }} as amount,
-    created as created_at
+    created
 
 from {{ source('stripe', 'payment') }}
