@@ -9,6 +9,13 @@ models:
       - name: hub_jaffle_customer_hkey
         tests:
           - dbt_constraints.primary_key
+  - name: hub_order
+    description: A distinct list of Orders of Jaffle Shop represented by the Order ID.
+    tags: ['order','jaffle_shop']
+    columns:
+      - name: hub_order_hkey
+        tests:
+          - dbt_constraints.primary_key          
   - name: hub_study
     description: A distinct list of Studies represented by the Study Protocol Number.
     tags: ['ionis','veeva_etmf']
@@ -30,6 +37,20 @@ models:
           column_names:
             - hub_jaffle_customer_hkey
             - load_datetime
+  - name: lsat_order_details_jaffle_shop
+    description: Descriptive information for Orders from Jaffle Shop.
+    tags: ['order','jaffle_shop']
+    columns:
+      - name: lnk_order_customer_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('lnk_order_customer')
+              pk_column_name: lnk_order_customer_hkey
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - lnk_order_customer_hkey
+            - load_datetime            
   - name: sat_study_details_veeva_etmf
     description: Descriptive information for Studies from Veeva ETMF.
     tags: ['ionis','veeva_etmf']
