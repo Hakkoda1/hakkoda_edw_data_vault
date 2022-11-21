@@ -48,9 +48,6 @@ models:
     raw_vault:
       +materialized: incremental 
       +schema: 'raw_vault' 
-    hubspot:
-      +materialized: view
-      +schema: 'hubspot' 
     biz_vault:
       +materialized: view
       +schema: 'biz_vault' 
