@@ -30,15 +30,15 @@ See [Model Layers](#model-layers) for more information.
 
     | dag_stage | Typically found in      | description                                                        |
     |-----------|-------------------------|--------------------------------------------------------------------|
-    | seed_     | /seeds                  | <li> Indicates a data set created from `dbt seed`. |
-    | stage_    | /models/raw_stage       | <li> Indicates a data set that is being cleaned and standardized. </li><li> In absence of a base_ layer, it represents the 1:1 relationship between the source and first layer of models. </li> |                                                                                                           |
-    | primed_   | /models/hash_stage      | <li> Indicates a logical step towards creating a final data set. </li><li>Typically used for:</li><ul><li>Breaking up a very large fct_ or dim_ model into smaller pieces to reduce complexity</li><li>Creating a reusable data set to reference in multiple downstream fct_ and dim_ models</li></ul> |
-    | hub_      | /models/raw_vault/hubs  | <li> Flags data which is used to describe an entity. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | hsat_     | /models/raw_vault/sats  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | lnk_      | /models/raw_vault/lnks  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | lsat_     | /models/raw_vault/sats  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | dim_      | /models/info_mart/dims  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | fact_     | /models/info_mart/facts | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |                
+    | seed_     | /seeds                  |  <li> Indicates a data set created from `dbt seed`. |
+    | stage_    | /models/raw_stage       |  <li> Indicates a data set that is being cleaned and standardized. </li><li> In absence of a base_ layer, it represents the 1:1 relationship between the source and first layer of models. </li> |                                                                                                           |
+    | primed_   | /models/hash_stage      |  <li> Indicates a logical step towards creating a final data set. </li><li>Typically used for:</li><ul><li>Breaking up a very large fct_ or dim_ model into smaller pieces to reduce complexity</li><li>Creating a reusable data set to reference in multiple downstream fct_ and dim_ models</li></ul> |
+    | hub_      | /models/raw_vault/hubs  |  <li> Flags data which is used to describe an entity. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | hsat_     | /models/raw_vault/sats  |  <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | lnk_      | /models/raw_vault/lnks  |  <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | lsat_     | /models/raw_vault/sats  |  <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | dim_      | /models/info_mart/dims  |  <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | fact_     | /models/info_mart/facts |  <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |                
   
   </details>
 
