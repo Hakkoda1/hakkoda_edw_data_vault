@@ -10,7 +10,7 @@
       identifier="stage_jaffle_shop_customers"
 ) -%}
 
-{% set source_mart_view=ref('jaffle_shop_customers') %}
+{% set source_mart_view=ref('src_jaffle_shop_customers') %}
 
 {{ audit_helper.compare_relations(
     a_relation=stage_table,
