@@ -30,15 +30,17 @@ See [Model Layers](#model-layers) for more information.
 
     | dag_stage | Typically found in      | description                                                        |
     |-----------|-------------------------|--------------------------------------------------------------------|
-    | seed_     | /seeds                  | <li> Indicates a data set created from `dbt seed`. |
-    | stage_    | /models/raw_stage       | <li> Indicates a data set that is being staged from a source. This layer will also include logic to perform initial load or incremental (if necessary). |
-    | primed_   | /models/hash_stage      | <li> Indicates a logical step towards preparing a stage data set for use in the configuring the dbtvault macros. Typically includes hash keys and metadata columns. |
-    | hub_      | /models/raw_vault/hubs  | <li> Flags data which is used to describe an entity. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | hsat_     | /models/raw_vault/sats  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | lnk_      | /models/raw_vault/lnks  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | lsat_     | /models/raw_vault/sats  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | dim_      | /models/info_mart/dims  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | fact_     | /models/info_mart/facts | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |                
+    | seed_     | /seeds                  | Indicates a data set created from `dbt seed`. |
+    | stage_    | /models/raw_stage       | Indicates a data set that is being staged from a source. This layer will also include logic to perform initial load or incremental (if necessary). |
+    | primed_   | /models/hash_stage      | Indicates a logical step towards preparing a stage data set for use in the configuring the dbtvault macros. Typically includes hash keys and metadata columns. |
+    | hub_      | /models/raw_vault/hubs  | Indicates a Data Vault 2.0 hub data set created from the dbtvault hub macro. |
+    | hsat_     | /models/raw_vault/sats  | Indicates a Data Vault 2.0 hub satellite data set created from the dbtvault satellite macro. |
+    | lnk_      | /models/raw_vault/lnks  | Indicates a Data Vault 2.0 link data set created from the dbtvault link macro. |
+    | lsat_     | /models/raw_vault/sats  | Indicates a Data Vault 2.0 link satellite data set created from the dbtvault satellite macro. |
+    | pit_      | /models/biz_vault/pits  | Indicates a Data Vault 2.0 point-in-time table created from the dbtvault pit macro by combinining a hub/lnk and its related satellites. <br/><br/> <strong><em>Example</strong></em>: <br>Location data in our org is seldom used partially, so we want to create one cleaned data set which puts it all together. <br/><br/> <em>Step 1</em>: Models to clean and standardize each data set:<br/><ul><li>base_location__addresses.sql</li><li>base_location__countries.sql</li><li>base_location__states.sql</li></ul><br/><em>Step 2</em>: A model to join all location data as one entity for use in downstream modeling:<ul><li>stg_location__locations.sql</li></ul> |
+    | brg_      | /models/biz_vault/brgs  | Indicates a Data Vault 2.0 bridge table created from the dbtvault macro.  |
+    | dim_      | /models/info_mart/dims  | Indicates a type 1 or type 2 dimension table. This is a final data which is robust, versatile, and ready for consumption in analytics. |
+    | fact_     | /models/info_mart/facts | Indicates a fact table. This is a final data which is robust, versatile, and ready for consumption in analytics. It should include referential integrity tests to all related dimenions. |
   
   </details>
 
@@ -46,10 +48,12 @@ See [Model Layers](#model-layers) for more information.
 
   <summary>Uncommon</summary>
 
-    | dag_stage | Typically found in | description                                                        |
-    |-----------|--------------------|--------------------------------------------------------------------|
-    | pit_      | /models/staging    | <li> Indicates cleaning and standardization on a data set before joining to other data sets in `stg_` models.<li> Typically used when multiple sources are rarely used independently. <br/><br/> <strong><em>Example</strong></em>: <br>Location data in our org is seldom used partially, so we want to create one cleaned data set which puts it all together. <br/><br/> <em>Step 1</em>: Models to clean and standardize each data set:<br/><ul><li>base_location__addresses.sql</li><li>base_location__countries.sql</li><li>base_location__states.sql</li></ul><br/><em>Step 2</em>: A model to join all location data as one entity for use in downstream modeling:<ul><li>stg_location__locations.sql</li></ul> |
-    | bridge_   | /models/reports    | Indicates that a final data sets are being modeled to pre-aggregate reports for use in outside tooling.                                                                                                                    |
+    | dag_stage | Typically found in     | description                                                        |
+    |-----------|------------------------|--------------------------------------------------------------------|
+    | sat_      | /models/biz_vault/sats | Indicates a computed satellite modeled in the form of a Data Vault 2.0 satellite to store repeatable logic & computations for use downstream in analytics. |
+    | lnk_      | /models/biz_vault/lnks | Indicates an exploratory link or current link (i.e. latest record from link with accompanying effectivity satellite). |
+    | src_      | /models/source_mart    | Indicates a data set modeled to recompose the source from the various raw vault objects. |    
+    | tst_      | /models/unit_test      | Indicates a data set that is used to audit and/or unit test for developers. |
 
   </details>
 
