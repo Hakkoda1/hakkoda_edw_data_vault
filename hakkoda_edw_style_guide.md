@@ -18,7 +18,7 @@ Things to note:
 that typically exist in each of the above categories.  
 See [Model Layers](#model-layers) for more information. 
 
-- Read [How we structure our dbt projects](https://docs.getdbt.com/guides/best-practices/how-we-structure/1-guide-overview) for an example and more details around organization.
+- Read [How we structure our dbtvault projects](https://dbtvault.readthedocs.io/en/latest/worked_example/we_staging/) for an example and more details around organization.
 
 ## Model Layers
 - Only models in `raw_stage` should select from [sources](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources)
@@ -28,13 +28,17 @@ See [Model Layers](#model-layers) for more information.
 
   <summary>Common</summary>
 
-    | dag_stage | Typically found in | description                                                        |
-    |-----------|--------------------|--------------------------------------------------------------------|
-    | seed_     | /seeds             | <li> Indicates a data set created from `dbt seed`. |
-    | stage_    | /models/staging    | <li> Indicates a data set that is being cleaned and standardized. </li><li> In absence of a base_ layer, it represents the 1:1 relationship between the source and first layer of models. </li> |                                                                                                           |
-    | primed_   | /models/marts      | <li> Indicates a logical step towards creating a final data set. </li><li>Typically used for:</li><ul><li>Breaking up a very large fct_ or dim_ model into smaller pieces to reduce complexity</li><li>Creating a reusable data set to reference in multiple downstream fct_ and dim_ models</li></ul> |
-    | hub_      | /models/marts      | <li> Flags data which is used to describe an entity. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
-    | lnk_      | /models/marts      | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | dag_stage | Typically found in      | description                                                        |
+    |-----------|-------------------------|--------------------------------------------------------------------|
+    | seed_     | /seeds                  | <li> Indicates a data set created from `dbt seed`. |
+    | stage_    | /models/raw_stage       | <li> Indicates a data set that is being cleaned and standardized. </li><li> In absence of a base_ layer, it represents the 1:1 relationship between the source and first layer of models. </li> |                                                                                                           |
+    | primed_   | /models/hash_stage      | <li> Indicates a logical step towards creating a final data set. </li><li>Typically used for:</li><ul><li>Breaking up a very large fct_ or dim_ model into smaller pieces to reduce complexity</li><li>Creating a reusable data set to reference in multiple downstream fct_ and dim_ models</li></ul> |
+    | hub_      | /models/raw_vault/hubs  | <li> Flags data which is used to describe an entity. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | hsat_     | /models/raw_vault/sats  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | lnk_      | /models/raw_vault/lnks  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | lsat_     | /models/raw_vault/sats  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | dim_      | /models/info_mart/dims  | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |
+    | fact_     | /models/info_mart/facts | <li> Flags data which is in the form of numeric facts observed during measurement events. </li><li> Indicates a final data which is robust, versatile, and ready for consumption. </li> |                
   
   </details>
 
@@ -44,8 +48,8 @@ See [Model Layers](#model-layers) for more information.
 
     | dag_stage | Typically found in | description                                                        |
     |-----------|--------------------|--------------------------------------------------------------------|
-    | base_     | /models/staging    | <li> Indicates cleaning and standardization on a data set before joining to other data sets in `stg_` models.<li> Typically used when multiple sources are rarely used independently. <br/><br/> <strong><em>Example</strong></em>: <br>Location data in our org is seldom used partially, so we want to create one cleaned data set which puts it all together. <br/><br/> <em>Step 1</em>: Models to clean and standardize each data set:<br/><ul><li>base_location__addresses.sql</li><li>base_location__countries.sql</li><li>base_location__states.sql</li></ul><br/><em>Step 2</em>: A model to join all location data as one entity for use in downstream modeling:<ul><li>stg_location__locations.sql</li></ul> |
-    | report_   | /models/reports    | Indicates that a final data sets are being modeled to pre-aggregate reports for use in outside tooling.                                                                                                                    |
+    | pit_      | /models/staging    | <li> Indicates cleaning and standardization on a data set before joining to other data sets in `stg_` models.<li> Typically used when multiple sources are rarely used independently. <br/><br/> <strong><em>Example</strong></em>: <br>Location data in our org is seldom used partially, so we want to create one cleaned data set which puts it all together. <br/><br/> <em>Step 1</em>: Models to clean and standardize each data set:<br/><ul><li>base_location__addresses.sql</li><li>base_location__countries.sql</li><li>base_location__states.sql</li></ul><br/><em>Step 2</em>: A model to join all location data as one entity for use in downstream modeling:<ul><li>stg_location__locations.sql</li></ul> |
+    | bridge_   | /models/reports    | Indicates that a final data sets are being modeled to pre-aggregate reports for use in outside tooling.                                                                                                                    |
 
   </details>
 
