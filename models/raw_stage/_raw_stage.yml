@@ -1,18 +1,6 @@
 version: 2
 
 sources:
-  - name: hubspot
-    description: Hubspot database synced from Fivetran.
-    database: fivetran
-    schema: hubspot
-    tables:
-      - name: company
-      - name: contact
-      - name: deal
-      - name: deal_company
-      - name: deal_stage
-      - name: deal_pipeline_stage
-      - name: owner
   - name: etl_admin
     description: My sandbox database etl_admin schema for dbt and dbtvault.
     database: cp_sandbox

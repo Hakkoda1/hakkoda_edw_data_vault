@@ -10,7 +10,7 @@
       identifier="stage_veeva_etmf_study"
 ) -%}
 
-{% set dbt_relation=ref('veeva_etmf_study') %}
+{% set dbt_relation=ref('src_veeva_etmf_study') %}
 
 {{ audit_helper.compare_relations(
     a_relation=old_etl_relation,
