@@ -1,12 +1,12 @@
 version: 2
 
 models:
-  - name: dim_jaffle_customer
+  - name: dim_customer
     description: One record per customer at Jaffle Shop.
 #    tests:
 #      - check_row_count_against_clone
     columns:
-      - name: jaffle_customer_key
+      - name: customer_key
         description: Primary key
         tests:
           - unique
@@ -40,13 +40,13 @@ models:
           - relationships:
               to: ref('dim_date')
               field: date_key            
-      - name: jaffle_customer_key                  
-        description: Surrogate key to relate to Jaffle Customer Key in Dim Jaffle Customer.
+      - name: customer_key                  
+        description: Surrogate key to relate to Customer Key in Dim Customer.
         tests:
           - not_null 
           - relationships:
-              to: ref('dim_jaffle_customer')
-              field: jaffle_customer_key             
+              to: ref('dim_customer')
+              field: customer_key             
       - name: order_date
         description: Invoice Date
         tests:

@@ -6,9 +6,9 @@
 
 {%- set yaml_metadata -%}
 source_model: "primed_jaffle_shop_customers"
-src_pk: "HUB_JAFFLE_CUSTOMER_HKEY"
+src_pk: "HUB_CUSTOMER_HKEY"
 src_hashdiff: 
-  source_column: "SAT_JAFFLE_CUSTOMER_DETAILS_HASHDIFF"
+  source_column: "SAT_CUSTOMER_NAME_HASHDIFF"
   alias: "HASH_DIFF"
 src_payload:
   - FIRST_NAME 

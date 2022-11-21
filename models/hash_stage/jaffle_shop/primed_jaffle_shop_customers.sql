@@ -10,8 +10,8 @@ derived_columns:
   EFFECTIVE_FROM: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
   CUSTOMER_ID: "ID"
 hashed_columns:
-  HUB_JAFFLE_CUSTOMER_HKEY: "CUSTOMER_ID"
-  SAT_JAFFLE_CUSTOMER_DETAILS_HASHDIFF:
+  HUB_CUSTOMER_HKEY: "CUSTOMER_ID"
+  SAT_CUSTOMER_NAME_HASHDIFF:
     is_hashdiff: true
     exclude_columns: true
     columns:

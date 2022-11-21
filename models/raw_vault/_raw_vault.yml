@@ -2,11 +2,11 @@ version: 2
 
 models:
 
-  - name: hub_jaffle_customer
+  - name: hub_customer
     description: A distinct list of Customers of Jaffle Shop represented by the Customer ID.
     tags: ['customer','jaffle_shop']
     columns:
-      - name: hub_jaffle_customer_hkey
+      - name: hub_customer_hkey
         tests:
           - dbt_constraints.primary_key
   - name: hub_order
@@ -30,19 +30,19 @@ models:
       - name: hub_study_hkey
         tests:
           - dbt_constraints.primary_key
-  - name: sat_jaffle_customer_details_jaffle_shop
+  - name: hsat_customer_name_jaffle_shop
     description: Descriptive information for Customers from Jaffle Shop.
     tags: ['customer','jaffle_shop']
     columns:
-      - name: hub_jaffle_customer_hkey
+      - name: hub_customer_hkey
         tests:
           - dbt_constraints.foreign_key:
-              pk_table_name: ref('hub_jaffle_customer')
-              pk_column_name: hub_jaffle_customer_hkey
+              pk_table_name: ref('hub_customer')
+              pk_column_name: hub_customer_hkey
     tests:
       - dbt_constraints.primary_key:
           column_names:
-            - hub_jaffle_customer_hkey
+            - hub_customer_hkey
             - load_datetime
   - name: lnk_order_customer
     description: A distinct list of the relationship between Orders and Customers from Jaffle Shop.
@@ -53,11 +53,11 @@ models:
           - dbt_constraints.foreign_key:
               pk_table_name: ref('hub_order')
               pk_column_name: hub_order_hkey
-      - name: hub_jaffle_customer_hkey
+      - name: hub_customer_hkey
         tests:
           - dbt_constraints.foreign_key:
-              pk_table_name: ref('hub_jaffle_customer')
-              pk_column_name: hub_jaffle_customer_hkey                            
+              pk_table_name: ref('hub_customer')
+              pk_column_name: hub_customer_hkey                            
     tests:
       - dbt_constraints.primary_key:
           column_names:
@@ -108,7 +108,7 @@ models:
           column_names:
             - lnk_payment_order_hkey
             - load_datetime                      
-  - name: sat_study_details_veeva_etmf
+  - name: hsat_study_details_veeva_etmf
     description: Descriptive information for Studies from Veeva ETMF.
     tags: ['ionis','veeva_etmf']
     columns:
