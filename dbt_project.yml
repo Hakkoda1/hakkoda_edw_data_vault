@@ -25,7 +25,8 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 # Configuring dbt_artifacts logging in production for observability
-on-run-end: "{% if target.name == 'prod' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
+#on-run-end: "{% if target.name == 'prod' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
+on-run-end: "{{ dbt_artifacts.upload_results(results) }}"
 
 # Configuring tests
 tests:
@@ -62,7 +63,13 @@ models:
       +schema: 'source_mart'  
     unit_test:
       +materialized: view
-      +schema: 'unit_test'                                       
+      +schema: 'unit_test'
+  dbt_artifacts:
+    +schema: dbt_artifacts # optional, default is your target schema
+    staging:
+      +schema: dbt_artifacts_staging # optional, default is your target schema
+    sources:
+      +schema: dbt_artifacts_sources # optional, default is your target schema  
 
 vars:
   'dbt_date:time_zone': 'America/Los_Angeles'
