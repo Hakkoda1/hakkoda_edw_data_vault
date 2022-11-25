@@ -13,4 +13,6 @@ packages:
   - package: Snowflake-Labs/dbt_constraints
     version: 0.5.2
   - package: dbt-labs/audit_helper
-    version: 0.5.0        
+    version: 0.5.0  
+  - package: brooklyn-data/dbt_artifacts
+    version: 2.2.1          

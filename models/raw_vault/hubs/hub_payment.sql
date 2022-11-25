@@ -1,12 +1,12 @@
 {{ config(
     materialized='incremental'
-    ,tags=["customer","jaffle_shop"]
+    ,tags=["payment","stripe"]
     )    
 }}
 
-{%- set source_model = ["primed_jaffle_shop_customers", "primed_jaffle_shop_orders"]  -%}
-{%- set src_pk = "HUB_CUSTOMER_HKEY"      -%}
-{%- set src_nk = "CUSTOMER_ID"          -%}
+{%- set source_model = ["primed_stripe_payments"]  -%}
+{%- set src_pk = "HUB_PAYMENT_HKEY"      -%}
+{%- set src_nk = "PAYMENT_ID"          -%}
 {%- set src_ldts = "LOAD_DATETIME"       -%}
 {%- set src_source = "RECORD_SOURCE"     -%}
 

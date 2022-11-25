@@ -1,0 +1,124 @@
+version: 2
+
+models:
+
+  - name: hub_customer
+    description: A distinct list of Customers of Jaffle Shop represented by the Customer ID.
+    tags: ['customer','jaffle_shop']
+    columns:
+      - name: hub_customer_hkey
+        tests:
+          - dbt_constraints.primary_key
+  - name: hub_order
+    description: A distinct list of Orders of Jaffle Shop represented by the Order ID.
+    tags: ['order','jaffle_shop']
+    columns:
+      - name: hub_order_hkey
+        tests:
+          - dbt_constraints.primary_key   
+  - name: hub_payment
+    description: A distinct list of Payments from Stripe represented by the Payment ID.
+    tags: ['payment','stripe']
+    columns:
+      - name: hub_payment_hkey
+        tests:
+          - dbt_constraints.primary_key                    
+  - name: hub_study
+    description: A distinct list of Studies represented by the Study Protocol Number.
+    tags: ['ionis','veeva_etmf']
+    columns:
+      - name: hub_study_hkey
+        tests:
+          - dbt_constraints.primary_key
+  - name: hsat_customer_name_jaffle_shop
+    description: Descriptive information for Customers from Jaffle Shop.
+    tags: ['customer','jaffle_shop']
+    columns:
+      - name: hub_customer_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_customer')
+              pk_column_name: hub_customer_hkey
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - hub_customer_hkey
+            - load_datetime
+  - name: lnk_order_customer
+    description: A distinct list of the relationship between Orders and Customers from Jaffle Shop.
+    tags: ['order','jaffle_shop']
+    columns:
+      - name: hub_order_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_order')
+              pk_column_name: hub_order_hkey
+      - name: hub_customer_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_customer')
+              pk_column_name: hub_customer_hkey                            
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - lnk_order_customer_hkey   
+  - name: lnk_payment_order
+    description: A distinct list of the relationship between Payments and Orders.
+    tags: ['payment','stripe']
+    columns:
+      - name: hub_payment_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_payment')
+              pk_column_name: hub_payment_hkey
+      - name: hub_order_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_order')
+              pk_column_name: hub_order_hkey              
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - lnk_payment_order_hkey               
+  - name: lsat_order_details_jaffle_shop
+    description: Descriptive information for Orders from Jaffle Shop.
+    tags: ['order','jaffle_shop']
+    columns:
+      - name: lnk_order_customer_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('lnk_order_customer')
+              pk_column_name: lnk_order_customer_hkey
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - lnk_order_customer_hkey
+            - load_datetime    
+  - name: lsat_payment_details_stripe
+    description: Descriptive information for Payments from Stripe.
+    tags: ['payment','stripe']
+    columns:
+      - name: lnk_payment_order_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('lnk_payment_order')
+              pk_column_name: lnk_payment_order_hkey
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - lnk_payment_order_hkey
+            - load_datetime                      
+  - name: hsat_study_details_veeva_etmf
+    description: Descriptive information for Studies from Veeva ETMF.
+    tags: ['ionis','veeva_etmf']
+    columns:
+      - name: hub_study_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_study')
+              pk_column_name: hub_study_hkey
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - hub_study_hkey
+            - load_datetime

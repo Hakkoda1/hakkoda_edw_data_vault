@@ -24,6 +24,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+# Configuring dbt_artifacts logging in production for observability
+on-run-end: "{% if target.name == 'prod' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
+
 # Configuring tests
 tests:
   +store_failures: true
@@ -48,9 +51,9 @@ models:
     raw_vault:
       +materialized: incremental 
       +schema: 'raw_vault' 
-    hubspot:
+    biz_vault:
       +materialized: view
-      +schema: 'hubspot' 
+      +schema: 'biz_vault' 
     info_mart:
       +materialized: view
       +schema: 'info_mart'    

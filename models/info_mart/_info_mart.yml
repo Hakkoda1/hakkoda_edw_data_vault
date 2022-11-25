@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: One record per customer at Jaffle Shop.
+#    tests:
+#      - check_row_count_against_clone
+    columns:
+      - name: customer_key
+        description: Primary key
+        tests:
+          - unique
+          - not_null 
+      - name: customer_id
+        description: Natural key
+        tests:
+          - unique 
+          - not_null 
+      - name: first_order
+        description: NULL when a customer has not yet placed an order.  
+      - name: most_recent_order
+        description: NULL when a customer has not yet placed an order.                    
+  - name: fact_order
+    description: One record per Order ID. 
+    columns:
+      - name: fact_order_key
+        description: Primary key
+        tests:
+          - unique
+          - not_null 
+      - name: order_id
+        description: Natural key
+        tests:
+          - unique
+          - not_null 
+      - name: order_date_key                  
+        description: Surrogate key to relate Order Date Key to Date Key in Dim Date.
+        tests:
+          - not_null 
+          - relationships:
+              to: ref('dim_date')
+              field: date_key            
+      - name: customer_key                  
+        description: Surrogate key to relate to Customer Key in Dim Customer.
+        tests:
+          - not_null 
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_key             
+      - name: order_date
+        description: Invoice Date
+        tests:
+          - not_null
+      - name: amount
+        description: Dollar amount of the order
+        tests:
+          - not_null                              
