@@ -40,8 +40,6 @@ tests:
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  pre-hook: "{{ logging.log_model_start_event() }}"
-  post-hook: "{{ logging.log_model_end_event() }}"
   hakkoda_edw:
     raw_stage:
       +materialized: view
