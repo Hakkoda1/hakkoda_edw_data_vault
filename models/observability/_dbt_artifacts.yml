@@ -1,0 +1,25 @@
+version: 2
+
+sources:  
+  - name: dbt_artifacts
+    description: dbt_artifacts objects for use in dbt Observability.
+    database: |
+      {%- if  target.name == "dev" -%} hakkoda_edw_dev
+      {%- elif target.name == "qa"  -%} hakkoda_edw_qa
+      {%- elif target.name == "prod"  -%} hakkoda_edw
+      {%- else -%} invalid_database
+      {%- endif -%}
+    schema: dbt_artifacts
+    tables:
+      - name: dim_dbt__current_models
+      - name: dim_dbt__exposures 
+      - name: dim_dbt__models
+      - name: dim_dbt__seeds
+      - name: dim_dbt__snapshots 
+      - name: dim_dbt__sources
+      - name: dim_dbt__tests
+      - name: fct_dbt__invocations 
+      - name: fct_dbt__model_executions
+      - name: fct_dbt__seed_executions
+      - name: fct_dbt__snapshot_executions
+      - name: fct_dbt__test_executions            

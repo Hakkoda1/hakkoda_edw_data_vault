@@ -1,25 +1,6 @@
 version: 2
 
-sources:
-  - name: etl_admin
-    description: My sandbox database etl_admin schema for dbt and dbtvault.
-    database: cp_sandbox
-    schema: etl_admin
-    tables:
-      - name: dbt_audit_log     
-  - name: healthcare_raw_stg
-    description: Healthcare RAW_STG sandbox datasets.
-    database: healthcare
-    schema: raw_stg
-    tables:
-      - name: phm_providers  
-      - name: phm_providers_with_key 
-  - name: healthcare_stg
-    description: Healthcare STG sandbox datasets.
-    database: healthcare
-    schema: stg
-    tables:
-      - name: kp_fhir_practitioner  
+sources:  
   - name: ionis_sbx
     description: Ionis sandbox datasets.
     database: ionis_sbx
@@ -31,7 +12,12 @@ sources:
       - name: raw_parent_hco   
   - name: jaffle_shop
     description: A clone of a Postgres application database.
-    database: cp_sandbox
+    database: |
+      {%- if  target.name == "dev" -%} hakkoda_edw_dev
+      {%- elif target.name == "qa"  -%} hakkoda_edw_qa
+      {%- elif target.name == "prod"  -%} hakkoda_edw
+      {%- else -%} invalid_database
+      {%- endif -%}
     schema: jaffle_shop
     tables:
       - name: customers
@@ -57,11 +43,26 @@ sources:
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour} 
   - name: stripe
-    database: cp_sandbox
+    database: |
+      {%- if  target.name == "dev" -%} hakkoda_edw_dev
+      {%- elif target.name == "qa"  -%} hakkoda_edw_qa
+      {%- elif target.name == "prod"  -%} hakkoda_edw
+      {%- else -%} invalid_database
+      {%- endif -%}
     schema: stripe
     tables:
       - name: payment
         loaded_at_field: _batched_at
         freshness:
             warn_after: {count: 12, period: hour}
-            error_after: {count: 24, period: hour}                            
+            error_after: {count: 24, period: hour}       
+  - name: account_usage
+    database: |
+      {%- if  target.name == "dev" -%} hakkoda_edw_dev
+      {%- elif target.name == "qa"  -%} hakkoda_edw_qa
+      {%- elif target.name == "prod"  -%} hakkoda_edw
+      {%- else -%} invalid_database
+      {%- endif -%}
+    schema: account_usage
+    tables:
+      - name: query_history                                   
