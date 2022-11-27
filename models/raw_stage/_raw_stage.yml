@@ -1,19 +1,6 @@
 version: 2
 
 sources:  
-  - name: healthcare_raw_stg
-    description: Healthcare RAW_STG sandbox datasets.
-    database: healthcare
-    schema: raw_stg
-    tables:
-      - name: phm_providers  
-      - name: phm_providers_with_key 
-  - name: healthcare_stg
-    description: Healthcare STG sandbox datasets.
-    database: healthcare
-    schema: stg
-    tables:
-      - name: kp_fhir_practitioner  
   - name: ionis_sbx
     description: Ionis sandbox datasets.
     database: ionis_sbx
