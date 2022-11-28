@@ -39,6 +39,22 @@ models:
           - dbt_constraints.foreign_key:
               pk_table_name: ref('hub_customer')
               pk_column_name: hub_customer_hkey
+      - name: hash_diff
+        description: '{{ doc("hash_diff") }}'
+        tests:
+          - not_null  
+      - name: record_source
+        description: '{{ doc("record_source") }}'
+        tests:
+          - not_null 
+      - name: effective_from
+        description: '{{ doc("effective_from") }}'
+        tests:
+          - not_null    
+      - name: load_datetime
+        description: '{{ doc("load_datetime") }}'
+        tests:
+          - not_null                 
     tests:
       - dbt_constraints.primary_key:
           column_names:
@@ -89,6 +105,22 @@ models:
           - dbt_constraints.foreign_key:
               pk_table_name: ref('lnk_order_customer')
               pk_column_name: lnk_order_customer_hkey
+      - name: hash_diff
+        description: '{{ doc("hash_diff") }}'
+        tests:
+          - not_null  
+      - name: record_source
+        description: '{{ doc("record_source") }}'
+        tests:
+          - not_null 
+      - name: effective_from
+        description: '{{ doc("effective_from") }}'
+        tests:
+          - not_null    
+      - name: load_datetime
+        description: '{{ doc("load_datetime") }}'
+        tests:
+          - not_null                
     tests:
       - dbt_constraints.primary_key:
           column_names:
@@ -103,6 +135,22 @@ models:
           - dbt_constraints.foreign_key:
               pk_table_name: ref('lnk_payment_order')
               pk_column_name: lnk_payment_order_hkey
+      - name: hash_diff
+        description: '{{ doc("hash_diff") }}'
+        tests:
+          - not_null  
+      - name: record_source
+        description: '{{ doc("record_source") }}'
+        tests:
+          - not_null 
+      - name: effective_from
+        description: '{{ doc("effective_from") }}'
+        tests:
+          - not_null    
+      - name: load_datetime
+        description: '{{ doc("load_datetime") }}'
+        tests:
+          - not_null                 
     tests:
       - dbt_constraints.primary_key:
           column_names:
@@ -117,6 +165,22 @@ models:
           - dbt_constraints.foreign_key:
               pk_table_name: ref('hub_study')
               pk_column_name: hub_study_hkey
+      - name: hash_diff
+        description: '{{ doc("hash_diff") }}'
+        tests:
+          - not_null  
+      - name: record_source
+        description: '{{ doc("record_source") }}'
+        tests:
+          - not_null 
+      - name: effective_from
+        description: '{{ doc("effective_from") }}'
+        tests:
+          - not_null    
+      - name: load_datetime
+        description: '{{ doc("load_datetime") }}'
+        tests:
+          - not_null                      
     tests:
       - dbt_constraints.primary_key:
           column_names:
