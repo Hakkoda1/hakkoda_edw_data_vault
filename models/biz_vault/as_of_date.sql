@@ -9,5 +9,8 @@ WITH as_of_date AS (
                             start_date=start_date,
                             end_date=end_date) }}
 )
-
-SELECT DATE_{{datepart}} as AS_OF_DATE FROM as_of_date
+,dates AS (
+    SELECT DATE_{{datepart}} as AS_OF_DATE FROM as_of_date
+)
+select dateadd(ms, -1, dateadd(day, 1, to_timestamp(as_of_date))) as_of_date
+from dates

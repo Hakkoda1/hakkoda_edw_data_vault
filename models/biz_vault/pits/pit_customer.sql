@@ -21,6 +21,7 @@ satellites:
 stage_tables_ldts: 
   primed_jaffle_shop_customers: LOAD_DATETIME   
   primed_jaffle_gaggle_raw_user: LOAD_DATETIME
+src_ldts: LOAD_DATETIME  
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
