@@ -1,10 +1,10 @@
 {{ config(
     materialized='incremental'
-    ,tags=["customer","jaffle_shop"]
+    ,tags=["customer","jaffle_shop", "jaffle_gaggle"]
     )    
 }}
 
-{%- set source_model = ["primed_jaffle_shop_customers", "primed_jaffle_shop_orders"]  -%}
+{%- set source_model = ["primed_jaffle_shop_customers", "primed_jaffle_shop_orders", "primed_jaffle_gaggle_raw_user"]  -%}
 {%- set src_pk = "HUB_CUSTOMER_HKEY"      -%}
 {%- set src_nk = "CUSTOMER_ID"          -%}
 {%- set src_ldts = "LOAD_DATETIME"       -%}
