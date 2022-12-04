@@ -1,6 +1,5 @@
 {{ config(
-    materialized='incremental'
-    ,tags=["customer","jaffle_gaggle"]
+    tags=["customer","jaffle_gaggle"]
     ,post_hook="{{ insert_ghost_record_to_satellite('hsat_customer_gaggle_user_details_crm') }}"
     )    
 }}

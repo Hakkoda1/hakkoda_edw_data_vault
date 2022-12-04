@@ -17,8 +17,10 @@ satellites:
     pk:
       PK: HUB_CUSTOMER_HKEY
     ldts:
-      LDTS: LOAD_DATETIME                           
-src_ldts: LOAD_DATETIME
+      LDTS: LOAD_DATETIME 
+stage_tables_ldts: 
+  primed_jaffle_shop_customers: LOAD_DATETIME   
+  primed_jaffle_gaggle_raw_user: LOAD_DATETIME
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
@@ -27,4 +29,5 @@ src_ldts: LOAD_DATETIME
                 src_pk=metadata_dict['src_pk'],
                 as_of_dates_table=metadata_dict['as_of_dates_table'],
                 satellites=metadata_dict['satellites'],
+                stage_tables_ldts=metadata_dict['stage_tables_ldts'],
                 src_ldts=metadata_dict['src_ldts']) }}

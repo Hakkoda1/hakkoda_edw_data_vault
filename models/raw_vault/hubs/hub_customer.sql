@@ -1,6 +1,5 @@
 {{ config(
-    materialized='incremental'
-    ,tags=["customer","jaffle_shop", "jaffle_gaggle"]
+    tags=["customer","jaffle_shop", "jaffle_gaggle"]
     )    
 }}
 

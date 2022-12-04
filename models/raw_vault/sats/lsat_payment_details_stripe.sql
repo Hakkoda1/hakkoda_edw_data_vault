@@ -1,6 +1,5 @@
 {{ config(
-    materialized='incremental'
-    ,tags=["payment","stripe"]
+    tags=["payment","stripe"]
     )    
 }}
 
