@@ -1,6 +1,6 @@
 {{ config(
-    materialized='incremental'
-    ,tags=["ionis", "veeva_etmf"]
+    tags=["ionis", "veeva_etmf"]
+    ,post_hook="{{ insert_ghost_record_to_satellite('hsat_study_details_veeva_etmf') }}"
     )    
 }}
 

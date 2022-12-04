@@ -1,6 +1,6 @@
 {{ config(
-    materialized='incremental'
-    ,tags=["customer","jaffle_shop"]
+    tags=["customer","jaffle_shop"]
+    ,post_hook="{{ insert_ghost_record_to_satellite('hsat_customer_name_jaffle_shop') }}"
     )    
 }}
 

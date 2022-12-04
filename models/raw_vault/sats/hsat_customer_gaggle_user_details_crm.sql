@@ -1,19 +1,20 @@
 {{ config(
-    tags=["payment","stripe"]
+    tags=["customer","jaffle_gaggle"]
+    ,post_hook="{{ insert_ghost_record_to_satellite('hsat_customer_gaggle_user_details_crm') }}"
     )    
 }}
 
 {%- set yaml_metadata -%}
-source_model: "primed_stripe_payments"
-src_pk: "LNK_PAYMENT_ORDER_HKEY"
+source_model: "primed_jaffle_gaggle_raw_user"
+src_pk: "HUB_CUSTOMER_HKEY"
 src_hashdiff: 
-  source_column: "LSAT_PAYMENT_DETAILS_HASHDIFF"
+  source_column: "SAT_CUSTOMER_GAGGLE_USER_CRM_HASHDIFF"
   alias: "HASH_DIFF"
 src_payload:
-  - PAYMENTMETHOD 
-  - STATUS
-  - AMOUNT 
-  - CREATED
+  - NAME 
+  - EMAIL 
+  - GAGGLE_ID 
+  - CREATED_AT
 src_eff: "EFFECTIVE_FROM"
 src_ldts: "LOAD_DATETIME"
 src_source: "RECORD_SOURCE"

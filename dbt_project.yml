@@ -73,6 +73,7 @@ models:
       +schema: dbt_artifacts_sources # optional, default is your target schema  
 
 vars:
+  hash: MD5
   'dbt_date:time_zone': 'America/Los_Angeles'
   is_incremental: true
   _fivetran_synced_local: 'CONVERT_TIMEZONE(''UTC'',''America/Los_Angeles'', _FIVETRAN_SYNCED)'

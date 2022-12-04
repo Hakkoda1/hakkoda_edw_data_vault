@@ -1,6 +1,5 @@
 {{ config(
-    materialized='incremental'
-    ,tags=["ionis", "veeva_etmf"]
+    tags=["ionis", "veeva_etmf"]
     )    
 }}
 
