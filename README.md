@@ -145,20 +145,20 @@ Example: a key to the `customers` table should be named `customer_id` rather tha
   - By default, `marts` should be materialized as `table` within `dbt_project.yml`.
   - If switching to `incremental`, this should be specified in the model's configuration.
 
-## Testing
+# Testing
 
-# Data Quality
+## Data Quality
 - At a minimum, `unique` and `not_null` tests should be applied to the expected primary key of each model.
 
-# Unit Testing
+## Unit Testing
 
-## CI/CD Strategy 
+# CI/CD Strategy 
 
-# Branching Strategy
+## Branching Strategy
 
 ![image](https://drive.google.com/uc?export=view&id=1F5iwwkFwbJ1fO1LwOnlUn69_C9FS2VRk)
 
-# Deployment Workflow 
+## Deployment Workflow 
 The following workflow is used to take a pipeline addition or modification from development to production:
 1. Developer creates a branch from QA and names it feature, fix or test and makes their changes or additions.
 2. Developer unit tests their changes or additions against a clone of PROD (or QA)
@@ -170,9 +170,9 @@ The following workflow is used to take a pipeline addition or modification from 
 8. After the release branch PR is merged a second Github action triggers creation of  a git Release and generates release notes.
 
 
-## Additional Topics
+# Additional Topics
 
-# CTEs
+## CTEs
 
 For more information about why we use so many CTEs, check out [this glossary entry](https://docs.getdbt.com/terms/cte).
 
@@ -263,7 +263,7 @@ For more information about why we use so many CTEs, check out [this glossary ent
   select * from final
   ```
 
-# SQL style guide
+## SQL style guide
 - **DO NOT OPTIMIZE FOR FEWER LINES OF CODE.**  
 
   New lines are cheap, brain time is expensive; new lines should be used within reason to produce code that is easily read.
@@ -338,7 +338,7 @@ For more information about why we use so many CTEs, check out [this glossary ent
 
   ```
 
-## Example SQL
+### Example SQL
   ```sql
   with
 
@@ -436,7 +436,7 @@ For more information about why we use so many CTEs, check out [this glossary ent
           └── stg_jaffle_shop__payments.sql
   ```
 
-# Example YAML
+### Example YAML
   `_jaffle_shop__models.yml`:
 
   ```yaml
@@ -506,7 +506,7 @@ For more information about why we use so many CTEs, check out [this glossary ent
   {% enddocs %}
 ```
 
-# Jinja style guide
+## Jinja style guide
 
 - Jinja delimiters should have spaces inside of the delimiter between the brackets and your code.  
   Example: `{{ this }}` instead of `{{this}}`
