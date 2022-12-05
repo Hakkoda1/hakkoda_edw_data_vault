@@ -2,6 +2,8 @@
 
 ## Solution Architecture
 
+https://drive.google.com/file/d/1KCcAW0A8PZBjacwoOMJeYu4RFqAU-ue3/view?usp=sharing
+
 ## Release & Deployment Workflow 
 
 ## Model Organization  
