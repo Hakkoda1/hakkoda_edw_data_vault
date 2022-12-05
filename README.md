@@ -1,4 +1,8 @@
-# hakkoda_edw Style Guide
+# hakkoda_edw Data Vault 2.0
+
+## Solution Architecture
+
+## Release & Deployment Workflow 
 
 ## Model Organization  
 Our models (typically) fit into the following categories:
