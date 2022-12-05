@@ -4,8 +4,6 @@
 
 ![image](https://drive.google.com/uc?export=view&id=1KCcAW0A8PZBjacwoOMJeYu4RFqAU-ue3)
 
-## Release & Deployment Workflow 
-
 ## Model Organization  
 Our models (typically) fit into the following categories:
 
@@ -149,9 +147,32 @@ Example: a key to the `customers` table should be named `customer_id` rather tha
 
 ## Testing
 
+# Data Quality
 - At a minimum, `unique` and `not_null` tests should be applied to the expected primary key of each model.
 
-## CTEs
+# Unit Testing
+
+## CI/CD Strategy 
+
+# Branching Strategy
+
+![image](https://drive.google.com/uc?export=view&id=1F5iwwkFwbJ1fO1LwOnlUn69_C9FS2VRk)
+
+# Deployment Workflow 
+The following workflow is used to take a pipeline addition or modification from development to production:
+1. Developer creates a branch from QA and names it feature, fix or test and makes their changes or additions.
+2. Developer unit tests their changes or additions against a clone of PROD (or QA)
+3. A PR is created by the developer from their feature/fix/test branch to QA branch
+4. PR is automatically labeled feature, fix or test based on the naming convention of “feature/logical-feature-name” by GitHub PR Labeler action.
+5. PR is reviewed and merged into QA branch by an admin
+6. QA job is run and QA/UAT is performed on the change/addition 
+7. Once ready for production, an admin uses Github  action ‘Draft a new release’ to trigger creation of a release branch PR to the PROD branch.
+8. After the release branch PR is merged a second Github action triggers creation of  a git Release and generates release notes.
+
+
+## Additional Topics
+
+# CTEs
 
 For more information about why we use so many CTEs, check out [this glossary entry](https://docs.getdbt.com/terms/cte).
 
@@ -242,7 +263,7 @@ For more information about why we use so many CTEs, check out [this glossary ent
   select * from final
   ```
 
-## SQL style guide
+# SQL style guide
 - **DO NOT OPTIMIZE FOR FEWER LINES OF CODE.**  
 
   New lines are cheap, brain time is expensive; new lines should be used within reason to produce code that is easily read.
@@ -317,7 +338,7 @@ For more information about why we use so many CTEs, check out [this glossary ent
 
   ```
 
-### Example SQL
+## Example SQL
   ```sql
   with
 
@@ -415,7 +436,7 @@ For more information about why we use so many CTEs, check out [this glossary ent
           └── stg_jaffle_shop__payments.sql
   ```
 
-### Example YAML
+# Example YAML
   `_jaffle_shop__models.yml`:
 
   ```yaml
@@ -485,7 +506,7 @@ For more information about why we use so many CTEs, check out [this glossary ent
   {% enddocs %}
 ```
 
-## Jinja style guide
+# Jinja style guide
 
 - Jinja delimiters should have spaces inside of the delimiter between the brackets and your code.  
   Example: `{{ this }}` instead of `{{this}}`
@@ -538,7 +559,7 @@ when needed.
   ) %}
   ```
 
-## Metrics style guide
+# Metrics style guide
 
 ### Organizing Metrics
 
@@ -560,7 +581,7 @@ when needed.
 
   ```
 
-### Metrics Conventions
+# Metrics Conventions
 
 dbt Metrics fall into four broad categories:
 1. Company metrics
@@ -575,7 +596,7 @@ Because of the wide socialization of these docs and downstream usage in the BI l
 * Meta properties should be used to track metric definition ownership.
 * For up-to-date information on metrics, please see the [metrics docs on defining a metric](https://docs.getdbt.com/docs/building-a-dbt-project/metrics#defining-a-metric) or the [dbt-labs/metrics README](https://github.com/dbt-labs/dbt_metrics#readme)
 
-### Example Metrics YAML
+# Example Metrics YAML
 ```yaml
 version: 2
 
