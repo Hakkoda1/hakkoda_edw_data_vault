@@ -2,7 +2,7 @@
 
 ## Solution Architecture
 
-https://drive.google.com/file/d/1KCcAW0A8PZBjacwoOMJeYu4RFqAU-ue3/view?usp=sharing
+![image](https://drive.google.com/uc?export=view&id=1KCcAW0A8PZBjacwoOMJeYu4RFqAU-ue3)
 
 ## Release & Deployment Workflow 
 
