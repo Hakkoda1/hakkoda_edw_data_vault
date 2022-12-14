@@ -50,12 +50,21 @@ models:
     raw_vault:
       +materialized: incremental 
       +schema: 'raw_vault' 
+      +persist_docs:
+        relation: true
+        columns: true
     biz_vault:
       +materialized: view
       +schema: 'biz_vault' 
+      +persist_docs:
+        relation: true
+        columns: true      
     info_mart:
       +materialized: view
-      +schema: 'info_mart'    
+      +schema: 'info_mart'  
+      +persist_docs:
+        relation: true
+        columns: true        
     source_mart:
       +materialized: view
       +schema: 'source_mart'  
