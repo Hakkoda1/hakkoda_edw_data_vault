@@ -41,7 +41,7 @@
 {% set hashdiff_list = [] %}
 {% endif %}
 
-    INSERT INTO RAW_VAULT.{{ sat_name }} ({% for hkey_name in hkey_list %}{{ hkey_name }}{% endfor %},{% for hashdiff_name in hashdiff_list %}{{ hashdiff_name }}{% endfor %}, EFFECTIVE_FROM, LOAD_DATETIME, RECORD_SOURCE)
+    INSERT INTO {{table_schema}}.{{ sat_name }} ({% for hkey_name in hkey_list %}{{ hkey_name }}{% endfor %},{% for hashdiff_name in hashdiff_list %}{{ hashdiff_name }}{% endfor %}, EFFECTIVE_FROM, LOAD_DATETIME, RECORD_SOURCE)
     WITH GHOST_RECORD AS (
         SELECT TO_BINARY(REPEAT('0', 16)) HKEY
         ,REPEAT('0', 16) HASHDIFF
@@ -53,7 +53,7 @@
     FROM GHOST_RECORD S
     WHERE NOT EXISTS (
         SELECT *
-        FROM RAW_VAULT.{{ sat_name }} S2
+        FROM {{table_schema}}.{{ sat_name }} S2
         WHERE S.HKEY = S2.{% for hkey_name in hkey_list %}{{ hkey_name }}{% endfor %}
         )
 
