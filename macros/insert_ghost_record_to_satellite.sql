@@ -3,12 +3,15 @@
 {% macro insert_ghost_record_to_satellite(sat_name) %}
   {# Takes input metadata for Satellite name to generate and execute the insert statement of a ghost record to a satellite. #}
 
+{% set table_schema = schema %}
+
+
 {% set hkey_query %}
     select column_name hkey_name
     from information_schema.columns
-    where table_schema = 'RAW_VAULT'
+    where lower(table_schema) = lower('{{ table_schema }}')
     and lower(table_name) = lower('{{ sat_name }}') 
-    and column_name like '%_HKEY'
+    and column_name like '%_KEY'
     and ordinal_position = 1
 {% endset %}
 
@@ -24,7 +27,7 @@
 {% set hashdiff_query %}
     select column_name hashdiff_name
     from information_schema.columns
-    where table_schema = 'RAW_VAULT'
+    where lower(table_schema) = lower('{{ table_schema }}')
     and lower(table_name) = lower('{{ sat_name }}') 
     and column_name = 'HASH_DIFF'
 {% endset %}
