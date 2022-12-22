@@ -11,4 +11,6 @@ packages:
   - package: dbt-labs/audit_helper
     version: 0.6.0  
   - package: brooklyn-data/dbt_artifacts
-    version: 2.2.2          
+    version: 2.2.2    
+  - package: Montreal-Analytics/snowflake_utils
+    version: 0.4.1             
