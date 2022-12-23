@@ -86,3 +86,6 @@ vars:
   'dbt_date:time_zone': 'America/Los_Angeles'
   is_incremental: true
   _fivetran_synced_local: 'CONVERT_TIMEZONE(''UTC'',''America/Los_Angeles'', _FIVETRAN_SYNCED)'
+  enable_ghost_records: true
+  system_record_value: 'DBTVAULT_SYSTEM' # Record Source value for ghost records in satellites 
+
