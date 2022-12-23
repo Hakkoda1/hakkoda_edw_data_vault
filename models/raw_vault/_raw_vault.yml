@@ -39,6 +39,9 @@ models:
           - dbt_constraints.foreign_key:
               pk_table_name: ref('hub_customer')
               pk_column_name: hub_customer_hkey
+              config:
+                severity: warn
+                error_if: ">1"  
       - name: hash_diff
         description: '{{ doc("hash_diff") }}'
         tests:
