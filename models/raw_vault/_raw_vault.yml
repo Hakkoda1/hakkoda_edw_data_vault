@@ -30,15 +30,18 @@ models:
       - name: hub_study_hkey
         tests:
           - dbt_constraints.primary_key
-  - name: hsat_customer_name_jaffle_shop
-    description: Descriptive information for Customers from Jaffle Shop.
-    tags: ['customer','jaffle_shop']
+  - name: hsat_customer_gaggle_user_details_crm
+    description: Descriptive information for Customer Gaggle User Accounts from Jaffle Shop CRM System.
+    tags: ['customer','jaffle_gaggle']
     columns:
       - name: hub_customer_hkey
         tests:
           - dbt_constraints.foreign_key:
               pk_table_name: ref('hub_customer')
               pk_column_name: hub_customer_hkey
+              config:
+                severity: warn
+                error_if: ">1"  
       - name: hash_diff
         description: '{{ doc("hash_diff") }}'
         tests:
@@ -60,6 +63,39 @@ models:
           column_names:
             - hub_customer_hkey
             - load_datetime
+  - name: hsat_customer_name_jaffle_shop
+    description: Descriptive information for Customers from Jaffle Shop.
+    tags: ['customer','jaffle_shop']
+    columns:
+      - name: hub_customer_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_customer')
+              pk_column_name: hub_customer_hkey
+              config:
+                severity: warn
+                error_if: ">1"  
+      - name: hash_diff
+        description: '{{ doc("hash_diff") }}'
+        tests:
+          - not_null  
+      - name: record_source
+        description: '{{ doc("record_source") }}'
+        tests:
+          - not_null 
+      - name: effective_from
+        description: '{{ doc("effective_from") }}'
+        tests:
+          - not_null    
+      - name: load_datetime
+        description: '{{ doc("load_datetime") }}'
+        tests:
+          - not_null                 
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - hub_customer_hkey
+            - load_datetime            
   - name: lnk_order_customer
     description: A distinct list of the relationship between Orders and Customers from Jaffle Shop.
     tags: ['order','jaffle_shop']
@@ -165,6 +201,9 @@ models:
           - dbt_constraints.foreign_key:
               pk_table_name: ref('hub_study')
               pk_column_name: hub_study_hkey
+              config:
+                severity: warn
+                error_if: ">1" 
       - name: hash_diff
         description: '{{ doc("hash_diff") }}'
         tests:
