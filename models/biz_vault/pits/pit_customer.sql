@@ -18,9 +18,15 @@ satellites:
       HKEY: HUB_CUSTOMER_HKEY
     ldts:
       LOAD_DATETIME: LOAD_DATETIME 
+  hsat_customer_phone_numbers_jaffle_shop:
+    pk:
+      HKEY: HUB_CUSTOMER_HKEY
+    ldts:
+      LOAD_DATETIME: LOAD_DATETIME       
 stage_tables_ldts: 
   primed_jaffle_shop_customers: LOAD_DATETIME   
   primed_jaffle_gaggle_raw_user: LOAD_DATETIME
+  primed_jaffle_shop_customer_phone_numbers_variant: LOAD_DATETIME
 src_ldts: LOAD_DATETIME  
 {%- endset -%}
 
