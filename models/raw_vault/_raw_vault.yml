@@ -63,6 +63,39 @@ models:
           column_names:
             - hub_customer_hkey
             - load_datetime
+  - name: hsat_customer_phone_numbers_jaffle_shop
+    description: Descriptive information for Customer Phone Numbers from Jaffle Shop.
+    tags: ['phone_numbers','customer','jaffle_shop']
+    columns:
+      - name: hub_customer_hkey
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('hub_customer')
+              pk_column_name: hub_customer_hkey
+              config:
+                severity: warn
+                error_if: ">1"  
+      - name: hash_diff
+        description: '{{ doc("hash_diff") }}'
+        tests:
+          - not_null  
+      - name: record_source
+        description: '{{ doc("record_source") }}'
+        tests:
+          - not_null 
+      - name: effective_from
+        description: '{{ doc("effective_from") }}'
+        tests:
+          - not_null    
+      - name: load_datetime
+        description: '{{ doc("load_datetime") }}'
+        tests:
+          - not_null                 
+    tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - hub_customer_hkey
+            - load_datetime   
   - name: hsat_customer_name_jaffle_shop
     description: Descriptive information for Customers from Jaffle Shop.
     tags: ['customer','jaffle_shop']
