@@ -12,7 +12,12 @@ satellites:
     pk:
       HKEY: HUB_CUSTOMER_HKEY
     ldts:
-      LOAD_DATETIME: LOAD_DATETIME   
+      LOAD_DATETIME: LOAD_DATETIME  
+  hsat_customer_phone_numbers_jaffle_shop:
+    pk:
+      HKEY: HUB_CUSTOMER_HKEY
+    ldts:
+      LOAD_DATETIME: LOAD_DATETIME         
   hsat_customer_gaggle_user_details_crm:
     pk:
       HKEY: HUB_CUSTOMER_HKEY
