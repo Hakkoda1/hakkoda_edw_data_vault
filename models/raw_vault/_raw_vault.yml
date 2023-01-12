@@ -9,6 +9,10 @@ models:
       - name: hub_customer_hkey
         tests:
           - dbt_constraints.primary_key
+    config:
+      meta:
+        database_tags:
+          data_owner: Marketing         
   - name: hub_order
     description: A distinct list of Orders of Jaffle Shop represented by the Order ID.
     tags: ['order','jaffle_shop']
@@ -90,7 +94,12 @@ models:
       - name: load_datetime
         description: '{{ doc("load_datetime") }}'
         tests:
-          - not_null                 
+          - not_null 
+      - name: phone_numbers
+        description: An array of customer phone numbers and phone types (i.e. Work, Home, Cell, etc)
+        meta:
+          database_tags:
+            data_sensitivity: pii                           
     tests:
       - dbt_constraints.primary_key:
           column_names:

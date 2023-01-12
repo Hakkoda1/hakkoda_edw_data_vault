@@ -28,6 +28,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 #on-run-end: "{% if target.name == 'prod' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
 on-run-end: "{{ dbt_artifacts.upload_results(results) }}"
 
+# Configuring snowflake_utils to apply meta attributes as Snowflake objects tags
+on-run-end: "{{ snowflake_utils.apply_meta_as_tags(results) }}"
+
 # Configuring tests
 tests:
   +store_failures: true
