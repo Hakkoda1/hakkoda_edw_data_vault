@@ -40,8 +40,9 @@ models:
               pk_table_name: ref('hub_customer')
               pk_column_name: hub_customer_hkey
               config:
-                severity: warn
-                error_if: ">1"  
+                severity: error
+                error_if: ">1"
+                warn_if: ">1"  
       - name: hash_diff
         description: '{{ doc("hash_diff") }}'
         tests:
@@ -73,8 +74,9 @@ models:
               pk_table_name: ref('hub_customer')
               pk_column_name: hub_customer_hkey
               config:
-                severity: warn
-                error_if: ">1"  
+                severity: error
+                error_if: ">1"
+                warn_if: ">1"  
       - name: hash_diff
         description: '{{ doc("hash_diff") }}'
         tests:
@@ -106,8 +108,9 @@ models:
               pk_table_name: ref('hub_customer')
               pk_column_name: hub_customer_hkey
               config:
-                severity: warn
-                error_if: ">1"  
+                severity: error
+                error_if: ">1"
+                warn_if: ">1" 
       - name: hash_diff
         description: '{{ doc("hash_diff") }}'
         tests:
@@ -235,8 +238,9 @@ models:
               pk_table_name: ref('hub_study')
               pk_column_name: hub_study_hkey
               config:
-                severity: warn
-                error_if: ">1" 
+                severity: error
+                error_if: ">1"
+                warn_if: ">1"  
       - name: hash_diff
         description: '{{ doc("hash_diff") }}'
         tests:
