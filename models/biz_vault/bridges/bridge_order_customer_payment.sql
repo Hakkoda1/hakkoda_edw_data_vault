@@ -15,8 +15,8 @@ bridge_walk:
     bridge_load_date: EFFSAT_CUSTOMER_ORDER_LOADDATE
     link_table: lnk_order_customer
     link_pk: LNK_ORDER_CUSTOMER_HKEY
-    link_fk1: HUB_ORDER_HKEY
-    link_fk2: HUB_CUSTOMER_HKEY
+    link_fk1: HUB_CUSTOMER_HKEY
+    link_fk2: HUB_ORDER_HKEY
     eff_sat_table: effsat_order_customer
     eff_sat_pk: LNK_ORDER_CUSTOMER_HKEY
     eff_sat_end_date: END_DATE
@@ -27,8 +27,8 @@ bridge_walk:
     bridge_load_date: EFFSAT_PAYMENT_ORDER_LOADDATE
     link_table: lnk_payment_order
     link_pk: LNK_PAYMENT_ORDER_HKEY
-    link_fk1: HUB_PAYMENT_HKEY
-    link_fk2: HUB_ORDER_HKEY
+    link_fk1: HUB_ORDER_HKEY
+    link_fk2: HUB_PAYMENT_HKEY
     eff_sat_table: effsat_payment_order
     eff_sat_pk: LNK_PAYMENT_ORDER_HKEY
     eff_sat_end_date: END_DATE

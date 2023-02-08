@@ -5,7 +5,7 @@
 
 {%- set datepart = "day" -%}
 {%- set start_date = "dateadd(year, -5, CURRENT_DATE)" -%}
-{%- set end_date = "CURRENT_DATE" -%}
+{%- set end_date = "dateadd(day, 1, CURRENT_DATE)" -%}
 
 with as_of_date as (
     {{ dbt_utils.date_spine(datepart=datepart, 
