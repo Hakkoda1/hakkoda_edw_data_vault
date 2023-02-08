@@ -10,6 +10,8 @@ derived_columns:
   EFFECTIVE_FROM: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
   ORDER_ID: "ID"
   CUSTOMER_ID: "USER_ID"
+  START_DATE: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
+  END_DATE: 'TO_TIMESTAMP(''9999-12-31 23:59:59.999999'')'   
 hashed_columns:
   HUB_ORDER_HKEY: "ORDER_ID"
   HUB_CUSTOMER_HKEY: "CUSTOMER_ID"
