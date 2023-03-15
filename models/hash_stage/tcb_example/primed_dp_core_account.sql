@@ -3,22 +3,22 @@
 ) }}
 
 {%- set yaml_metadata -%}
-source_model: "stage_dp_core_customer"
+source_model: "stage_dp_core_account"
 derived_columns:
-  RECORD_SOURCE: "!TCB Example - DPCORE Customer"
+  RECORD_SOURCE: "!TCB Example - DPCORE Account"
   LOAD_DATETIME: 'TO_TIMESTAMP(''{{ run_started_at.strftime("%Y-%m-%d %H:%M:%S.%f") }}'')'
   EFFECTIVE_FROM: "CREATED_AT"
-  CUSTOMER_ID: "ID"
+  ACCOUNT_ID: "ACCT_ID"
   COLLISION_KEY: '!DPCORE'
 hashed_columns:
-  HUB_CUSTOMER_HKEY:
+  HUB_ACCOUNT_HKEY:
     - 'COLLISION_KEY'
-    - 'nvl(CUSTOMER_ID,to_varchar(-1))'  
-  SAT_CUSTOMER_DP_CORE_HASHDIFF:
+    - 'nvl(ACCOUNT_ID,to_varchar(-1))'  
+  SAT_ACCOUNT_DP_CORE_HASHDIFF:
     is_hashdiff: true
     exclude_columns: true
     columns:
-      - "ID"
+      - "ACCT_ID"
       - "CREATED_AT"
 {%- endset -%}
 

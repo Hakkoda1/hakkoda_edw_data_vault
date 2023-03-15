@@ -19,6 +19,7 @@ hashed_columns:
     exclude_columns: true
     columns:
       - "ID"
+      - "CREATED_AT"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
