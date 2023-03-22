@@ -1,0 +1,6 @@
+selectors:
+  - name: dbt_artifacts_nightly
+    description: "Nightly run of dbt_artifacts."
+    definition:
+      method: package
+      value: dbt_artifacts
