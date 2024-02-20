@@ -1,6 +1,13 @@
 version: 2
 
 sources:  
+  - name: healthcare_fhir
+    description: blah.
+    database: healthcare
+    schema: fhir_flattened
+    tables:
+      - name: fhir_claim
+        description: Raw fhir claim data.    
   - name: jaffle_shop
     description: A clone of a Postgres application database.
     database: |
