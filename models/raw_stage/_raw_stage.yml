@@ -2,12 +2,26 @@ version: 2
 
 sources:  
   - name: healthcare_fhir
-    description: blah.
+    description: a synthetic database of clinical data derived from FIHR messages
     database: healthcare
     schema: fhir_flattened
     tables:
       - name: fhir_claim
-        description: Raw fhir claim data.    
+        description: Raw fhir claim data. 
+      - name: fhir_medicationrequest
+        description: Raw medication orders.  
+      - name: fhir_medication
+        description: Medication reference table. 
+      - name: claim
+        description: medical/pharmacy claims. 
+      - name: claim_item
+        description: Claim line item. 
+      - name: fhir_observation
+        description: FHIR Observation  
+      - name: fhir_observation_component
+        description: FHIR Observation component.   
+      - name: patient
+        description: table of patients.    
   - name: jaffle_shop
     description: A clone of a Postgres application database.
     database: |
